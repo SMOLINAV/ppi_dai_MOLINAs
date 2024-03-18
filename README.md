@@ -1,5 +1,5 @@
-# Python backend
-## COntenido:
+# App de planificación de viajes
+## Contenido:
 - [Descripción](###descripcion)
 - [contacto](###contacto)
 ### Descripción del Proyecto
