@@ -9,7 +9,7 @@ from dashboard import show_dashboard
 usuarios = {"usuario1": "password1", "usuario2": "password2"}
 
 # Título de la aplicación
-st.title("APP VIAJERO FELIZ")
+st.title("Sistema de Registro e Inicio de Sesión")
 
 # Opción para seleccionar acción (registro o inicio de sesión)
 opcion = st.radio("Selecciona una opción:", ("Crear un nuevo usuario", "Iniciar sesión"))
