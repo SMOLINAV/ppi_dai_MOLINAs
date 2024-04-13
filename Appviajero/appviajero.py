@@ -35,10 +35,9 @@ elif opcion == "Iniciar sesión":
         else:
             st.success(f"Bienvenido, {usuario}! Has iniciado sesión exitosamente.")
 
-# Espacio para escribir información sobre ti y tu contacto
-st.header("Acerca de mí")
-nombre = st.text_input("Nombre:")
-contacto = st.text_input("Información de contacto:")
-
-if st.button("Guardar"):
-    st.write("¡Información guardada exitosamente!")
+# Crear pestaña para información del creador
+if st.button("Información del Creador"):
+    st.header("Acerca de Mí")
+    st.write("¡Hola! Soy el creador de esta aplicación.")
+    st.write("Me llamo [Tu Nombre]")
+    st.write("Puedes contactarme en [Tu Correo Electrónico]")
