@@ -1,4 +1,3 @@
-from Appviajero.about_me import show_about_me
 import streamlit as st
 from auth import crear_usuario, iniciar_sesion
 from dashboard import show_dashboard
@@ -21,4 +20,6 @@ if opcion_autenticacion == "Iniciar Sesión":
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
 
-show_about_me()
+# Sección "Acerca de mí"
+st.header("Acerca de")
+st.write("Mi nombre es Santiago Molina Velasquez. Soy estudiante de ingeniería de sistemas en la Universidad Nacional de Colombia. Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones innovadoras a través del desarrollo de software y la ingeniería de sistemas.")
