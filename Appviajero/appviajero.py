@@ -1,9 +1,12 @@
 import streamlit as st
 <<<<<<< HEAD
 from auth import crear_usuario, iniciar_sesion
+<<<<<<< HEAD
 from dashboard import show_dashboard
 =======
 >>>>>>> parent of b7fe1aa (intento de nueva pestaña)
+=======
+>>>>>>> parent of cfb7a3c (Revert "intentoreveerso")
 
 # Base de datos simulada para almacenar usuarios
 usuarios = {"usuario1": "password1", "usuario2": "password2"}
@@ -22,6 +25,7 @@ elif opcion == "Iniciar sesión":
 <<<<<<< HEAD
     usuario = iniciar_sesion(usuarios)
     if usuario:
+<<<<<<< HEAD
         show_dashboard(usuario)
 =======
     st.header("Iniciar Sesión")
@@ -42,3 +46,27 @@ if st.button("Información del Creador"):
     st.write("¡Hola! Mi nombre es Santiago Molina Velasquez y soy estudiante de ingeniería de sistemas en la Universidad Nacional de Colombia. Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones innovadoras a través del desarrollo de software y la ingeniería de sistemas. Tengo como metas cercanas terminar mi carrera profesional y seguir consolidandome y laborando en todo lo relacionado a tecnología y en el gran mundo del internet.")
     st.write("Puedes contactarme en smolinav@unal.edu.co")
 >>>>>>> parent of b7fe1aa (intento de nueva pestaña)
+=======
+        # Lógica del dashboard
+        st.subheader(f"Bienvenido, {usuario}!")
+        st.write("Aquí puedes buscar vuelos, trenes, autobuses y tipos de alojamientos.")
+        
+        # Agregar funcionalidad de búsqueda
+        with st.expander("Buscar"):
+            tipo_busqueda = st.selectbox("Selecciona el tipo de búsqueda:", ("Vuelos", "Trenes", "Autobuses", "Alojamientos"))
+            if tipo_busqueda == "Vuelos":
+                origen = st.text_input("Origen:")
+                destino = st.text_input("Destino:")
+                fecha_salida = st.date_input("Fecha de salida:")
+                fecha_regreso = st.date_input("Fecha de regreso:")
+                # Aquí puedes agregar la lógica de búsqueda de vuelos
+            elif tipo_busqueda == "Trenes":
+                # Lógica de búsqueda de trenes
+                pass
+            elif tipo_busqueda == "Autobuses":
+                # Lógica de búsqueda de autobuses
+                pass
+            elif tipo_busqueda == "Alojamientos":
+                # Lógica de búsqueda de alojamientos
+                pass
+>>>>>>> parent of cfb7a3c (Revert "intentoreveerso")
