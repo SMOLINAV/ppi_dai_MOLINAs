@@ -24,4 +24,9 @@ def iniciar_sesion(usuarios):
             st.error("Contraseña incorrecta. Por favor, inténtalo de nuevo.")
         else:
             st.success(f"Bienvenido, {usuario}! Has iniciado sesión exitosamente.")
-            return usuario
+            # Redirige al usuario a la nueva pestaña
+            st.set_page_config(page_title="¿Qué destino buscas?")
+            st.write("# ¿Qué destino buscas?")
+            st.write("¡Bienvenido! Utiliza esta página para buscar tu próximo destino.")
+            # También puedes agregar más contenido aquí si lo deseas
+            st.write("Por favor, actualiza la página si no se redirige automáticamente.")
