@@ -1,5 +1,5 @@
 import streamlit as st
-from user_info import crear_usuario, iniciar_sesion
+from auth import crear_usuario, iniciar_sesion
 from dashboard import show_dashboard
 
 # Base de datos simulada para almacenar usuarios
@@ -16,8 +16,6 @@ if opcion == "Crear un nuevo usuario":
     crear_usuario(usuarios)
 
 elif opcion == "Iniciar sesión":
-    iniciar_sesion(usuarios)
-
-# Mostrar información del usuario
-if st.button("Mostrar Información del Usuario"):
-    show_user_info(usuarios)
+    usuario = iniciar_sesion(usuarios)
+    if usuario:
+        show_dashboard(usuario)
