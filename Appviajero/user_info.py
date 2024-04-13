@@ -1,4 +1,4 @@
-from Appviajero.dashboard import show_dashboard
+from dashboard import show_dashboard
 import streamlit as st
 
 def crear_usuario(usuarios):
