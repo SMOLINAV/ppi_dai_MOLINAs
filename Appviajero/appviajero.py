@@ -1,87 +1,37 @@
 import streamlit as st
 
-# Información del creador de la aplicación
-st.sidebar.title("Información del Creador")
-st.sidebar.write("Nombre: Santiago Molina Velasquez")
-st.sidebar.write("Contacto: santiagomolinav@example.com")
+# Base de datos simulada para almacenar usuarios
+usuarios = {"usuario1": "password1", "usuario2": "password2"}
 
-# Registro de usuarios
-st.sidebar.title("Registro de Usuarios")
-username = st.sidebar.text_input("Nombre de usuario")
-password = st.sidebar.text_input("Contraseña", type="password")
+# Título de la aplicación
+st.title("Sistema de Registro e Inicio de Sesión")
 
-# Actualización de contraseñas
-if st.sidebar.button("Actualizar Contraseña"):
-    new_password = st.sidebar.text_input("Nueva Contraseña", type="password")
-    # Lógica para actualizar la contraseña en la base de datos
+# Opción para seleccionar acción (registro o inicio de sesión)
+opcion = st.radio("Selecciona una opción:", ("Crear un nuevo usuario", "Iniciar sesión"))
 
-# Política de tratamiento de datos personales
-st.sidebar.title("Política de Tratamiento de Datos Personales")
-st.sidebar.write("Esta aplicación respeta la privacidad de los usuarios y cumple con las regulaciones de protección de datos.")
+# Manejo de la opción seleccionada
+if opcion == "Crear un nuevo usuario":
+    st.header("Crear Nuevo Usuario")
+    nuevo_usuario = st.text_input("Nombre de usuario")
+    nueva_contraseña = st.text_input("Contraseña", type="password")
 
-# Guardar información de usuarios (simulación)
-if st.sidebar.button("Registrarse"):
-    # Lógica para guardar la información del usuario en la base de datos
-    st.sidebar.success("Registro exitoso")
+    if st.button("Registrar"):
+        if nuevo_usuario in usuarios:
+            st.error("El usuario ya existe. Por favor, elige otro nombre de usuario.")
+        else:
+            usuarios[nuevo_usuario] = nueva_contraseña
+            st.success("Usuario creado exitosamente. ¡Ahora puedes iniciar sesión!")
 
-# Importación de bibliotecas con manejo de errores
-try:
-    import numpy as np
-except ImportError:
-    st.error("Error al importar la biblioteca: numpy")
+elif opcion == "Iniciar sesión":
+    st.header("Iniciar Sesión")
+    usuario = st.text_input("Nombre de usuario")
+    contraseña = st.text_input("Contraseña", type="password")
 
-try:
-    import pandas as pd
-except ImportError:
-    st.error("Error al importar la biblioteca: pandas")
+    if st.button("Iniciar Sesión"):
+        if usuario not in usuarios:
+            st.error("Usuario no encontrado. Por favor, registra una cuenta.")
+        elif usuarios[usuario] != contraseña:
+            st.error("Contraseña incorrecta. Por favor, inténtalo de nuevo.")
+        else:
+            st.success(f"Bienvenido, {usuario}! Has iniciado sesión exitosamente.")
 
-try:
-    import matplotlib.pyplot as plt
-except ImportError:
-    st.error("Error al importar la biblioteca: matplotlib.pyplot")
-
-try:
-    from scipy.optimize import minimize
-except ImportError:
-    st.error("Error al importar la biblioteca: scipy.optimize.minimize")
-
-try:
-    import geopandas as gpd
-except ImportError:
-    st.error("Error al importar la biblioteca: geopandas")
-
-# Acceso a funcionalidades básicas y avanzadas
-st.title("APP VIAJEROFELIZ: Planificación de Viajes")
-
-# Funcionalidades básicas sin registro
-st.header("Funcionalidades Básicas (Público en General)")
-st.write("¡Regístrate para acceder a funcionalidades avanzadas!")
-
-# Funcionalidades avanzadas con registro
-if username and password:
-    st.header("Funcionalidades Avanzadas (Usuarios Registrados)")
-    st.subheader("Búsqueda de Vuelos")
-    # Lógica para buscar vuelos
-
-    st.subheader("Búsqueda de Alojamientos")
-    # Lógica para buscar alojamientos
-
-    st.subheader("Recomendaciones de Actividades y Lugares de Interés")
-    # Lógica para recomendaciones de actividades y lugares de interés
-
-    # Funcionalidades específicas usando las librerías mencionadas
-    st.header("Funcionalidades Específicas")
-    st.subheader("Optimización de Rutas de Viaje con NumPy")
-    # Lógica para cálculos numéricos relacionados con la optimización de rutas de viaje
-
-    st.subheader("Análisis de Datos con Pandas")
-    # Lógica para manipulación y análisis de datos de horarios de transporte y disponibilidad de alojamientos
-
-    st.subheader("Visualización de Opciones de Viaje con Matplotlib")
-    # Lógica para visualización de opciones de viaje en gráficos interactivos
-
-    st.subheader("Optimización de Itinerarios de Viaje con SciPy")
-    # Lógica para optimización de itinerarios de viaje basados en preferencias del usuario y restricciones de tiempo
-
-    st.subheader("Representación de Ubicaciones y Rutas de Viaje con GeoPandas")
-    # Lógica para representación de ubicaciones de destinos y rutas de viaje en mapas
