@@ -15,7 +15,7 @@ opcion_autenticacion = st.radio("Selecciona una opción:", ("Iniciar Sesión", "
 if opcion_autenticacion == "Iniciar Sesión":
     usuario = iniciar_sesion(usuarios)
     if usuario:
-        # Botón para abrir la nueva página
+        # Botón para ir a la nueva página
         if st.button("Ir a la nueva página"):
             mostrar_pagina_busqueda()
 
@@ -32,3 +32,8 @@ st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante
              consolidándome y laborando en todo lo relacionado a tecnología y 
              en el gran mundo del internet.''')
 st.write("Puedes contactarme en smolinav@unal.edu.co")
+
+# Sección "Tratamiento de Datos"
+st.header("Tratamiento de Datos")
+st.write("Aquí puedes realizar análisis y tratamiento de datos según tus necesidades.")
+# Agrega aquí la funcionalidad de tratamiento de datos según lo que se necesite
