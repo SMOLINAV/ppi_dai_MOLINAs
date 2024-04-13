@@ -1,4 +1,4 @@
 def abrir_nueva_pestana():
     return """
-    <button onclick="window.open('http://www.ejemplo.com', '_blank');">Busca tu próximo destino</button>
+    <a href="/busca_tu_proximo_destino" target="_blank"><button>Busca tu próximo destino</button></a>
     """
