@@ -15,8 +15,11 @@ opcion_autenticacion = st.radio("Selecciona una opción:", ("Iniciar Sesión", "
 if opcion_autenticacion == "Iniciar Sesión":
     usuario = iniciar_sesion(usuarios)
     if usuario:
-        # Botón para abrir la nueva pestaña
-        st.markdown(abrir_nueva_pestana(), unsafe_allow_html=True)
+        # Mostrar mensaje de inicio de sesión exitoso
+        st.success(f"Bienvenido, {usuario}!")
+        # Botón para abrir la nueva página
+        if st.button("Ir a la nueva página"):
+            abrir_nueva_pestana()
 
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
