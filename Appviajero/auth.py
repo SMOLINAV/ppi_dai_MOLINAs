@@ -1,4 +1,16 @@
 import streamlit as st
+import json
+
+def cargar_usuarios():
+    try:
+        with open("usuarios.json", "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+
+def guardar_usuarios(usuarios):
+    with open("usuarios.json", "w") as f:
+        json.dump(usuarios, f)
 
 def crear_usuario(usuarios):
     st.header("Crear Nuevo Usuario")
@@ -10,8 +22,8 @@ def crear_usuario(usuarios):
             st.error("El usuario ya existe. Por favor, elige otro nombre de usuario.")
         else:
             usuarios[nuevo_usuario] = nueva_contraseña
+            guardar_usuarios(usuarios)
             st.success("Usuario creado exitosamente. ¡Ahora puedes iniciar sesión!")
-            # Agregar aquí el código para guardar los usuarios en una base de datos permanente, si lo deseas
 
 def iniciar_sesion(usuarios):
     st.header("Iniciar Sesión")
@@ -25,9 +37,4 @@ def iniciar_sesion(usuarios):
             st.error("Contraseña incorrecta. Por favor, inténtalo de nuevo.")
         else:
             st.success(f"Bienvenido, {usuario}! Has iniciado sesión exitosamente.")
-            # Redirige al usuario a la nueva pestaña
-            st.set_page_config(page_title="¿Qué destino buscas?")
-            st.write("# ¿Qué destino buscas?")
-            st.write("¡Bienvenido! Utiliza esta página para buscar tu próximo destino.")
-            # También puedes agregar más contenido aquí si lo deseas
-            st.write("Por favor, actualiza la página si no se redirige automáticamente.")
+            return usuario
