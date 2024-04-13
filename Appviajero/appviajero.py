@@ -1,15 +1,19 @@
 import streamlit as st
 
-# Manejamos la posible excepción de importación
-try:
-    import numpy as np
-    import pandas as pd
-    import matplotlib.pyplot as plt
-    from scipy.optimize import minimize
-    import geopandas as gpd
-except ImportError as e:
-    st.error(f"Error al importar la biblioteca: {e}")
-    st.stop()
+# Función para importar bibliotecas y manejar errores
+def import_library(library_name):
+    try:
+        return __import__(library_name)
+    except ImportError:
+        st.error(f"Error al importar la biblioteca: {library_name}")
+        st.stop()
+
+# Importar bibliotecas necesarias
+np = import_library("numpy")
+pd = import_library("pandas")
+plt = import_library("matplotlib.pyplot")
+minimize = import_library("scipy.optimize.minimize")
+gpd = import_library("geopandas")
 
 # Información del creador de la aplicación
 st.sidebar.title("Información del Creador")
