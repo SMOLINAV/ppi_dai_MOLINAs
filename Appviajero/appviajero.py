@@ -19,5 +19,7 @@ if opcion_autenticacion == "Iniciar Sesión":
 
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
-    # Si el usuario se registra con éxito, se redirige a la página "Busca tu próximo destino"
-    # No es necesario mostrar nada aquí, ya que la redirección ocurrirá en la función `crear_usuario`
+
+# Sección "Acerca de mí"
+st.header("Acerca de")
+st.write("Mi nombre es Santiago Molina Velasquez. Soy estudiante de ingeniería de sistemas en la Universidad Nacional de Colombia. Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones innovadoras a través del desarrollo de software y la ingeniería de sistemas.")
