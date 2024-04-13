@@ -14,8 +14,10 @@ opcion_autenticacion = st.radio("Selecciona una opción:", ("Iniciar Sesión", "
 if opcion_autenticacion == "Iniciar Sesión":
     usuario = iniciar_sesion(usuarios)
     if usuario:
-        # Aquí puedes redirigir al usuario a la página deseada después de iniciar sesión
+        # Mensaje de inicio de sesión exitoso
         st.success(f"Bienvenido, {usuario}!")
+        # Abrir nueva pestaña con título "Busca tu próximo destino"
+        st.markdown("<a href='https://www.google.com' target='_blank'>Busca tu próximo destino</a>", unsafe_allow_html=True)
 
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
@@ -27,6 +29,6 @@ st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante
              Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones 
              innovadoras a través del desarrollo de software y la ingeniería de sistemas. 
              Tengo como metas cercanas terminar mi carrera profesional y seguir 
-             consolidandome y laborando en todo lo relacionado a tecnología y 
+             consolidándome y laborando en todo lo relacionado a tecnología y 
              en el gran mundo del internet.''')
 st.write("Puedes contactarme en smolinav@unal.edu.co")
