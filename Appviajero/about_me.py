@@ -1,6 +1,6 @@
 import streamlit as st
 
-def show_user_info(usuarios):
+def show_about_me():
     st.header("Acerca de Mí")
     st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante 
              de ingeniería de sistemas en la Universidad Nacional de Colombia. 
