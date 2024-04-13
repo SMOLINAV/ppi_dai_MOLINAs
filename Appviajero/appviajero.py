@@ -16,8 +16,7 @@ if opcion_autenticacion == "Iniciar Sesión":
     usuario = iniciar_sesion(usuarios)
     if usuario:
         # Botón para abrir la nueva pestaña
-        if st.button("Ir a la nueva pestaña"):
-            st.write(abrir_nueva_pestana(), unsafe_allow_html=True)
+        st.markdown(abrir_nueva_pestana(), unsafe_allow_html=True)
 
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
