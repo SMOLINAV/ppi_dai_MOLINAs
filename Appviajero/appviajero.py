@@ -4,7 +4,7 @@ import streamlit as st
 usuarios = {"usuario1": "password1", "usuario2": "password2"}
 
 # Título de la aplicación
-st.title("Sistema de Registro e Inicio de Sesión")
+st.title("App viajero feliz")
 
 # Opción para seleccionar acción (registro o inicio de sesión)
 opcion = st.radio("Selecciona una opción:", ("Crear un nuevo usuario", "Iniciar sesión"))
