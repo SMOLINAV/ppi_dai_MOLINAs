@@ -15,7 +15,7 @@ if opcion_autenticacion == "Iniciar Sesión":
     usuario = iniciar_sesion(usuarios)
     if usuario:
         # Abrir nueva pestaña con título "Busca tu próximo destino"
-        st.markdown("<a href='https://www.google.com' target='_blank'>Busca tu próximo destino</a>", unsafe_allow_html=True)
+        st.write("<script>window.open('https://www.google.com', '_blank');</script>", unsafe_allow_html=True)
 
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
