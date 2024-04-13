@@ -1,72 +1,24 @@
 import streamlit as st
-<<<<<<< HEAD
 from auth import crear_usuario, iniciar_sesion
-<<<<<<< HEAD
 from dashboard import show_dashboard
-=======
->>>>>>> parent of b7fe1aa (intento de nueva pestaña)
-=======
->>>>>>> parent of cfb7a3c (Revert "intentoreveerso")
 
 # Base de datos simulada para almacenar usuarios
 usuarios = {"usuario1": "password1", "usuario2": "password2"}
 
 # Título de la aplicación
-st.title("Sistema de Registro e Inicio de Sesión")
+st.title("APP VIAJEROFELIZ - Planificador de Viajes")
 
-# Opción para seleccionar acción (registro o inicio de sesión)
-opcion = st.radio("Selecciona una opción:", ("Crear un nuevo usuario", "Iniciar sesión"))
+# Pestañas de la aplicación
+tabs = st.sidebar.radio("Menú:", ("Acerca de", "Inicio de Sesión", "Crear Usuario"))
 
-# Manejo de la opción seleccionada
-if opcion == "Crear un nuevo usuario":
-    crear_usuario(usuarios)
+if tabs == "Acerca de":
+    st.subheader("Acerca del Creador")
+    st.write("Mi nombre es Santiago Molina Velasquez. Soy estudiante de ingeniería de sistemas en la Universidad Nacional de Colombia. Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones innovadoras a través del desarrollo de software y la ingeniería de sistemas.")
 
-elif opcion == "Iniciar sesión":
-<<<<<<< HEAD
+elif tabs == "Inicio de Sesión":
     usuario = iniciar_sesion(usuarios)
     if usuario:
-<<<<<<< HEAD
         show_dashboard(usuario)
-=======
-    st.header("Iniciar Sesión")
-    usuario = st.text_input("Nombre de usuario")
-    contraseña = st.text_input("Contraseña", type="password")
 
-    if st.button("Iniciar Sesión"):
-        if usuario not in usuarios:
-            st.error("Usuario no encontrado. Por favor, registra una cuenta.")
-        elif usuarios[usuario] != contraseña:
-            st.error("Contraseña incorrecta. Por favor, inténtalo de nuevo.")
-        else:
-            st.success(f"Bienvenido, {usuario}! Has iniciado sesión exitosamente.")
-
-# Crear pestaña para información del creador
-if st.button("Información del Creador"):
-    st.header("Acerca de Mí")
-    st.write("¡Hola! Mi nombre es Santiago Molina Velasquez y soy estudiante de ingeniería de sistemas en la Universidad Nacional de Colombia. Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones innovadoras a través del desarrollo de software y la ingeniería de sistemas. Tengo como metas cercanas terminar mi carrera profesional y seguir consolidandome y laborando en todo lo relacionado a tecnología y en el gran mundo del internet.")
-    st.write("Puedes contactarme en smolinav@unal.edu.co")
->>>>>>> parent of b7fe1aa (intento de nueva pestaña)
-=======
-        # Lógica del dashboard
-        st.subheader(f"Bienvenido, {usuario}!")
-        st.write("Aquí puedes buscar vuelos, trenes, autobuses y tipos de alojamientos.")
-        
-        # Agregar funcionalidad de búsqueda
-        with st.expander("Buscar"):
-            tipo_busqueda = st.selectbox("Selecciona el tipo de búsqueda:", ("Vuelos", "Trenes", "Autobuses", "Alojamientos"))
-            if tipo_busqueda == "Vuelos":
-                origen = st.text_input("Origen:")
-                destino = st.text_input("Destino:")
-                fecha_salida = st.date_input("Fecha de salida:")
-                fecha_regreso = st.date_input("Fecha de regreso:")
-                # Aquí puedes agregar la lógica de búsqueda de vuelos
-            elif tipo_busqueda == "Trenes":
-                # Lógica de búsqueda de trenes
-                pass
-            elif tipo_busqueda == "Autobuses":
-                # Lógica de búsqueda de autobuses
-                pass
-            elif tipo_busqueda == "Alojamientos":
-                # Lógica de búsqueda de alojamientos
-                pass
->>>>>>> parent of cfb7a3c (Revert "intentoreveerso")
+elif tabs == "Crear Usuario":
+    crear_usuario(usuarios)
