@@ -11,17 +11,5 @@ def crear_usuario(usuarios):
         else:
             usuarios[nuevo_usuario] = nueva_contraseña
             st.success("Usuario creado exitosamente. ¡Ahora puedes iniciar sesión!")
-
-def iniciar_sesion(usuarios):
-    st.header("Iniciar Sesión")
-    usuario = st.text_input("Nombre de usuario")
-    contraseña = st.text_input("Contraseña", type="password")
-
-    if st.button("Iniciar Sesión"):
-        if usuario not in usuarios:
-            st.error("Usuario no encontrado. Por favor, registra una cuenta.")
-        elif usuarios[usuario] != contraseña:
-            st.error("Contraseña incorrecta. Por favor, inténtalo de nuevo.")
-        else:
-            st.success(f"Bienvenido, {usuario}! Has iniciado sesión exitosamente.")
-            return usuario
+            # Redirige al usuario a la página "Busca tu próximo destino"
+            st.redirect("busca_destino.py")
