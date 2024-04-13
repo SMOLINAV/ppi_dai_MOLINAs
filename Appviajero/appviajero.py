@@ -35,9 +35,7 @@ st.write("Puedes contactarme en smolinav@unal.edu.co")
 
 # Sección "Tratamiento de Datos"
 st.header("Tratamiento de Datos")
-# Sección "Tratamiento de Datos"
-with st.beta_expander("Tratamiento de Datos"):
-    st.write('''Tratamiento de Datos en nuestra Nueva Aplicación de Viajes
+st.write('''Tratamiento de Datos en nuestra Nueva Aplicación de Viajes
 
 En nuestra emocionante nueva aplicación de viajes, nos esforzamos por brindar una experiencia 
          personalizada y sobresaliente para cada uno de nuestros valiosos usuarios. 
@@ -63,5 +61,4 @@ Nos comprometemos a ser transparentes en nuestras prácticas de privacidad y seg
 Gracias por confiar en nosotros para planificar tus aventuras. 
          ¡Esperamos que disfrutes explorando el mundo con nuestra aplicación!
          ''')
-
-
+# Agrega aquí la funcionalidad de tratamiento de datos según lo que se necesite
