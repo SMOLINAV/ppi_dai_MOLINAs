@@ -1,20 +1,5 @@
 import streamlit as st
 
-# Función para importar bibliotecas y manejar errores
-def import_library(library_name):
-    try:
-        return __import__(library_name)
-    except ImportError:
-        st.error(f"Error al importar la biblioteca: {library_name}")
-        st.stop()
-
-# Importar bibliotecas necesarias
-np = import_library("numpy")
-pd = import_library("pandas")
-plt = import_library("matplotlib.pyplot")
-minimize = import_library("scipy.optimize.minimize")
-gpd = import_library("geopandas")
-
 # Información del creador de la aplicación
 st.sidebar.title("Información del Creador")
 st.sidebar.write("Nombre: Santiago Molina Velasquez")
@@ -38,6 +23,32 @@ st.sidebar.write("Esta aplicación respeta la privacidad de los usuarios y cumpl
 if st.sidebar.button("Registrarse"):
     # Lógica para guardar la información del usuario en la base de datos
     st.sidebar.success("Registro exitoso")
+
+# Importación de bibliotecas con manejo de errores
+try:
+    import numpy as np
+except ImportError:
+    st.error("Error al importar la biblioteca: numpy")
+
+try:
+    import pandas as pd
+except ImportError:
+    st.error("Error al importar la biblioteca: pandas")
+
+try:
+    import matplotlib.pyplot as plt
+except ImportError:
+    st.error("Error al importar la biblioteca: matplotlib.pyplot")
+
+try:
+    from scipy.optimize import minimize
+except ImportError:
+    st.error("Error al importar la biblioteca: scipy.optimize.minimize")
+
+try:
+    import geopandas as gpd
+except ImportError:
+    st.error("Error al importar la biblioteca: geopandas")
 
 # Acceso a funcionalidades básicas y avanzadas
 st.title("APP VIAJEROFELIZ: Planificación de Viajes")
