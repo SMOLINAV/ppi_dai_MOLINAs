@@ -1,5 +1,5 @@
 import streamlit as st
-from user_info import show_user_info
+from user_info import crear_usuario, iniciar_sesion
 from dashboard import show_dashboard
 
 # Base de datos simulada para almacenar usuarios
