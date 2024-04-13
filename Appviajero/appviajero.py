@@ -1,5 +1,6 @@
 import streamlit as st
 from auth import cargar_usuarios, crear_usuario, iniciar_sesion
+from nueva_pestana import abrir_nueva_pestana
 
 # Cargar usuarios al iniciar la aplicación
 usuarios = cargar_usuarios()
@@ -15,7 +16,7 @@ if opcion_autenticacion == "Iniciar Sesión":
     usuario = iniciar_sesion(usuarios)
     if usuario:
         # Abrir nueva pestaña con título "Busca tu próximo destino"
-        st.write("<script>window.open('https://www.google.com', '_blank');</script>", unsafe_allow_html=True)
+        st.write(abrir_nueva_pestana(), unsafe_allow_html=True)
 
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
