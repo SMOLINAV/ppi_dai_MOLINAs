@@ -1,6 +1,6 @@
 import streamlit as st
 from auth import cargar_usuarios, crear_usuario, iniciar_sesion
-from nueva_pestana import abrir_nueva_pestana
+from nueva_pestana import mostrar_pagina_busqueda
 
 # Cargar usuarios al iniciar la aplicación
 usuarios = cargar_usuarios()
@@ -17,7 +17,7 @@ if opcion_autenticacion == "Iniciar Sesión":
     if usuario:
         # Botón para abrir la nueva página
         if st.button("Ir a la nueva página"):
-            abrir_nueva_pestana()
+            mostrar_pagina_busqueda()
 
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
