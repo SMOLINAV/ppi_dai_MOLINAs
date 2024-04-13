@@ -1,26 +1,27 @@
 import streamlit as st
 
-# Intenta importar las funciones necesarias desde el módulo auth.py
-try:
-    from auth import crear_usuario, iniciar_sesion
-except ImportError:
-    # Maneja el error de importación aquí
-    st.error("Error al importar las funciones desde auth.py. Verifica la ubicación del archivo.")
+def crear_usuario(usuarios):
+    st.header("Crear Nuevo Usuario")
+    nuevo_usuario = st.text_input("Nombre de usuario")
+    nueva_contraseña = st.text_input("Contraseña", type="password")
 
-# Base de datos simulada para almacenar usuarios
-usuarios = {"usuario1": "password1", "usuario2": "password2"}
+    if st.button("Registrar"):
+        if nuevo_usuario in usuarios:
+            st.error("El usuario ya existe. Por favor, elige otro nombre de usuario.")
+        else:
+            usuarios[nuevo_usuario] = nueva_contraseña
+            st.success("Usuario creado exitosamente. ¡Ahora puedes iniciar sesión!")
 
-# Título de la aplicación
-st.title("Sistema de Registro e Inicio de Sesión")
+def iniciar_sesion(usuarios):
+    st.header("Iniciar Sesión")
+    usuario = st.text_input("Nombre de usuario")
+    contraseña = st.text_input("Contraseña", type="password")
 
-# Opción para seleccionar acción (registro o inicio de sesión)
-opcion = st.radio("Selecciona una opción:", ("Crear un nuevo usuario", "Iniciar sesión"))
-
-# Manejo de la opción seleccionada
-if opcion == "Crear un nuevo usuario":
-    crear_usuario(usuarios)
-
-elif opcion == "Iniciar sesión":
-    usuario = iniciar_sesion(usuarios)
-    if usuario:
-        show_dashboard(usuario)
+    if st.button("Iniciar Sesión"):
+        if usuario not in usuarios:
+            st.error("Usuario no encontrado. Por favor, registra una cuenta.")
+        elif usuarios[usuario] != contraseña:
+            st.error("Contraseña incorrecta. Por favor, inténtalo de nuevo.")
+        else:
+            st.success(f"Bienvenido, {usuario}! Has iniciado sesión exitosamente.")
+            return usuario
