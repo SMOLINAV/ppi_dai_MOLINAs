@@ -8,17 +8,18 @@ usuarios = {"usuario1": "password1", "usuario2": "password2"}
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ - Planificador de Viajes")
 
-# Pestañas de la aplicación
-tabs = st.sidebar.radio("Menú:", ("Acerca de", "Inicio de Sesión", "Crear Usuario"))
+# Sección de "Iniciar Sesión" o "Registrarse"
+st.sidebar.title("Autenticación")
+opcion_autenticacion = st.sidebar.radio("Selecciona una opción:", ("Iniciar Sesión", "Registrarse"))
 
-if tabs == "Acerca de":
-    st.subheader("Acerca del Creador")
-    st.write("Mi nombre es Santiago Molina Velasquez. Soy estudiante de ingeniería de sistemas en la Universidad Nacional de Colombia. Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones innovadoras a través del desarrollo de software y la ingeniería de sistemas.")
-
-elif tabs == "Inicio de Sesión":
+if opcion_autenticacion == "Iniciar Sesión":
     usuario = iniciar_sesion(usuarios)
     if usuario:
         show_dashboard(usuario)
 
-elif tabs == "Crear Usuario":
+elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
+
+# Sección "Acerca de mí"
+st.sidebar.title("Acerca de")
+st.sidebar.write("Mi nombre es Santiago Molina Velasquez. Soy estudiante de ingeniería de sistemas en la Universidad Nacional de Colombia. Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones innovadoras a través del desarrollo de software y la ingeniería de sistemas.")
