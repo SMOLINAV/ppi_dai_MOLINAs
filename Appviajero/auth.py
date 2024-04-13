@@ -11,6 +11,7 @@ def crear_usuario(usuarios):
         else:
             usuarios[nuevo_usuario] = nueva_contraseña
             st.success("Usuario creado exitosamente. ¡Ahora puedes iniciar sesión!")
+            # Agregar aquí el código para guardar los usuarios en una base de datos permanente, si lo deseas
 
 def iniciar_sesion(usuarios):
     st.header("Iniciar Sesión")
