@@ -14,8 +14,6 @@ opcion_autenticacion = st.radio("Selecciona una opción:", ("Iniciar Sesión", "
 if opcion_autenticacion == "Iniciar Sesión":
     usuario = iniciar_sesion(usuarios)
     if usuario:
-        # Mensaje de inicio de sesión exitoso
-        st.success(f"Bienvenido, {usuario}!")
         # Abrir nueva pestaña con título "Busca tu próximo destino"
         st.markdown("<a href='https://www.google.com' target='_blank'>Busca tu próximo destino</a>", unsafe_allow_html=True)
 
