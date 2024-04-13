@@ -1,4 +1,6 @@
 import streamlit as st
+from user_info import show_user_info
+from dashboard import show_dashboard
 
 # Base de datos simulada para almacenar usuarios
 usuarios = {"usuario1": "password1", "usuario2": "password2"}
@@ -34,9 +36,9 @@ elif opcion == "Iniciar sesión":
             st.error("Contraseña incorrecta. Por favor, inténtalo de nuevo.")
         else:
             st.success(f"Bienvenido, {usuario}! Has iniciado sesión exitosamente.")
+            # Redirigir al usuario al tablero
+            show_dashboard(usuario)
 
-# Crear pestaña para información del creador
-if st.button("Información del Creador"):
-    st.header("Acerca de Mí")
-    st.write("¡Hola! Mi nombre es Santiago Molina Velasquez y soy estudiante de ingeniería de sistemas en la Universidad Nacional de Colombia. Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones innovadoras a través del desarrollo de software y la ingeniería de sistemas. Tengo como metas cercanas terminar mi carrera profesional y seguir consolidandome y laborando en todo lo relacionado a tecnología y en el gran mundo del internet.")
-    st.write("Puedes contactarme en smolinav@unal.edu.co")
+# Mostrar información del usuario
+if st.button("Mostrar Información del Usuario"):
+    show_user_info(usuarios)
