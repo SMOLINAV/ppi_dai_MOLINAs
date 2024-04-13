@@ -38,6 +38,5 @@ elif opcion == "Iniciar sesión":
 # Crear pestaña para información del creador
 if st.button("Información del Creador"):
     st.header("Acerca de Mí")
-    st.write("¡Hola! Soy el creador de esta aplicación.")
-    st.write("Me llamo [Tu Nombre]")
-    st.write("Puedes contactarme en [Tu Correo Electrónico]")
+    st.write("¡Hola! Mi nombre es Santiago Molina Velasquez y soy estudiante de ingeniería de sistemas en la Universidad Nacional de Colombia. Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones innovadoras a través del desarrollo de software y la ingeniería de sistemas. Tengo como metas cercanas terminar mi carrera profesional y seguir consolidandome y laborando en todo lo relacionado a tecnología y en el gran mundo del internet.")
+    st.write("Puedes contactarme en smolinav@unal.edu.co")
