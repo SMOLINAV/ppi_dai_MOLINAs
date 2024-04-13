@@ -1,9 +1,8 @@
 import streamlit as st
-from auth import crear_usuario, iniciar_sesion
-from dashboard import show_dashboard
+from auth import cargar_usuarios, crear_usuario, iniciar_sesion
 
-# Base de datos simulada para almacenar usuarios
-usuarios = {"usuario1": "password1", "usuario2": "password2"}
+# Cargar usuarios al iniciar la aplicación
+usuarios = cargar_usuarios()
 
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ - Planificador de Viajes")
@@ -15,7 +14,8 @@ opcion_autenticacion = st.radio("Selecciona una opción:", ("Iniciar Sesión", "
 if opcion_autenticacion == "Iniciar Sesión":
     usuario = iniciar_sesion(usuarios)
     if usuario:
-        show_dashboard(usuario)
+        # Aquí puedes redirigir al usuario a la página deseada después de iniciar sesión
+        st.success(f"Bienvenido, {usuario}!")
 
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
