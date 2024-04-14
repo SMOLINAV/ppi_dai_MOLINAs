@@ -47,7 +47,7 @@ else:
 
 
 # Seccion buscar lugares Colombia
-st.header("Buscar Lugares en Colombia")
+st.header("Buscar Lugares En Colombia")
 ciudad = st.text_input("Ingrese el nombre de una ciudad colombiana:")
 if ciudad:
     lugares = buscar_lugares_ciudad(ciudad)
@@ -57,7 +57,7 @@ if ciudad:
 
 
 # Seccion buscar lugares paises América
-st.header("Buscar Lugares en América")
+st.header("Buscar Lugares En América")
 if st.session_state.usuario:
    paises = ["Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba", "Estados Unidos", "México", "Panamá", "Paraguay", "Perú", "Puerto Rico", "Uruguay", "Venezuela"]
    pais = st.selectbox("Seleccione un país:", sorted(paises))
@@ -74,7 +74,7 @@ else:
 
 
 # Sección "Acerca de mí"
-st.header("Acerca de Mí")
+st.header("### Acerca De Mí")
 st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante 
              de ingeniería de sistemas en la Universidad Nacional de Colombia. 
              Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones 
