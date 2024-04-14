@@ -34,15 +34,6 @@ if opcion_autenticacion == "Iniciar Sesión":
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
 
-# Seccion buscar lugares Colombia
-st.header("Buscar Lugares en Colombia")
-ciudad = st.text_input("Ingrese el nombre de una ciudad colombiana:")
-if ciudad:
-    lugares = buscar_lugares_ciudad(ciudad)
-    st.write(f"Lugares bonitos e importantes de {ciudad.capitalize()}:")
-    for lugar in lugares:
-        st.write(f"- {lugar}")
-
 # Sección de cambio de contraseña
 st.header("Cambiar Contraseña")
 if st.session_state.usuario:
@@ -53,6 +44,16 @@ if st.session_state.usuario:
         cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
 else:
     st.write("Por favor, inicia sesión para cambiar la contraseña.")                
+
+# Seccion buscar lugares Colombia
+st.header("Buscar Lugares en Colombia")
+ciudad = st.text_input("Ingrese el nombre de una ciudad colombiana:")
+if ciudad:
+    lugares = buscar_lugares_ciudad(ciudad)
+    st.write(f"Lugares bonitos e importantes de {ciudad.capitalize()}:")
+    for lugar in lugares:
+        st.write(f"- {lugar}")
+
 
 # Seccion buscar lugares paises América
 st.header("Buscar Lugares en América")
