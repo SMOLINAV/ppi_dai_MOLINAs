@@ -15,6 +15,9 @@ def manage_session():
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ - Planificador de Viajes")
 
+# Manejo de la sesión
+manage_session()
+
 # Sección de "Iniciar Sesión" o "Registrarse"
 st.header("Autenticación")
 opcion_autenticacion = st.radio("Selecciona una opción:", ("Iniciar Sesión", "Registrarse"))
