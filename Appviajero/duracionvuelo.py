@@ -1,4 +1,4 @@
-import numpy as np
+"""import numpy as np
 
 def calcular_duracion_vuelo(distancia_km, velocidad_promedio_kmh):
     # Convertir la distancia a millas náuticas (1 km = 0.539957 millas náuticas)
@@ -15,3 +15,4 @@ velocidad_promedio_kmh = 800  # Velocidad promedio de un avión
 
 duracion_vuelo = calcular_duracion_vuelo(distancia_km, velocidad_promedio_kmh)
 print("Duración del vuelo:", duracion_vuelo, "horas")
+"""
