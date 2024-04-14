@@ -35,15 +35,18 @@ elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
 
 # Sección de cambio de contraseña
-st.write("<span style='color:orange'>Cambiar Contraseña</span>", unsafe_allow_html=True)
-if st.session_state.usuario:
-    contraseña_actual = st.text_input("Contraseña Actual", type="password")
-    nueva_contraseña = st.text_input("Nueva Contraseña", type="password")
-
-    if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == "Si" and st.button("Cambiar Contraseña"):
-        cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
-else:
-    st.write("Por favor, inicia sesión para cambiar la contraseña.")
+    st.write("A continuación, puedes acceder a otras funcionalidades:")
+    if st.button("Cambiar Contraseña"):
+        # Aquí puedes poner el código para mostrar la sección de configuración
+        st.write("<span style='color:orange'>Cambiar Contraseña</span>", unsafe_allow_html=True)
+        if st.session_state.usuario:
+            contraseña_actual = st.text_input("Contraseña Actual", type="password")
+            nueva_contraseña = st.text_input("Nueva Contraseña", type="password")
+            
+            if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == "Si" and st.button("Cambiar Contraseña"):
+                cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
+    else:
+        st.write("Por favor, inicia sesión para cambiar la contraseña.")
 
 
 # Seccion buscar lugares Colombia
