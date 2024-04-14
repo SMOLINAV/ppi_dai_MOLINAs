@@ -85,7 +85,7 @@ st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante
 st.write("Puedes contactarme smolinav@unal.edu.co")
 
 # Sección "Tratamiento de Datos"
-st.write("<span style='color:black'> Tratamiento De Datos", unsafe_allow_html=True)
+st.write("<span style='color:blue'> Tratamiento De Datos", unsafe_allow_html=True)
 st.write('''Tratamiento de Datos en nuestra Nueva Aplicación de Viajes
 
 En nuestra emocionante nueva aplicación de viajes, nos esforzamos por brindar una experiencia 
