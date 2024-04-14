@@ -46,5 +46,21 @@ def buscar_lugares_ciudad(ciudad):
         return ["Nevado del Ruiz", "Catedral Basílica Metropolitana de Manizales", "Cable Aéreo de Manizales", "Parque Natural Regional Río Blanco"]
     elif ciudad.lower() == "sogamoso":
         return ["Laguna de Tota", "Catedral Basílica del Milagroso Señor de los Milagros", "Monumento a la Virgen del Milagro", "Parque Arqueológico de Monquirá"]
+    elif ciudad.lower() == "arauca":
+        return ["Parque Nacional Natural El Tuparro", "Puente José Antonio Páez", "Catedral de San Bartolomé", "Plaza Bolívar de Arauca"]
+    elif ciudad.lower() == "quibdó":
+        return ["Reserva Natural Serranía del Baudó", "Catedral de San Francisco de Asís", "Malecón de Quibdó", "Plaza Cívica José María Cordoba"]
+    elif ciudad.lower() == "riohacha":
+        return ["Desierto de la Guajira", "Catedral Nuestra Señora de los Remedios", "Parque de la Marina", "Plaza José Prudencio Padilla"]
+    elif ciudad.lower() == "quindío":
+        return ["Parque Nacional Natural Los Nevados", "Parque del Café", "Jardín Botánico del Quindío", "Viaducto César Gaviria Trujillo"]
+    elif ciudad.lower() == "yopal":
+        return ["Reserva Natural Laguna de la Leche", "Catedral Santiago de los Caballeros", "Puente Real de Boyacá", "Monumento a la Libertad de Yopal"]
+    elif ciudad.lower() == "leticia":
+        return ["Reserva Natural Marasha", "Parque Nacional Natural Amacayacu", "Catedral Nuestra Señora de la Paz", "Malecón Turístico"]
+    elif ciudad.lower() == "flores":
+        return ["Laguna de Yarinacocha", "Catedral Nuestra Señora de la Asunción", "Mercado de Belén", "Plaza Mayor"]
+    elif ciudad.lower() == "mitú":
+        return ["Reserva Nacional Natural Puinawai", "Catedral de San José", "Parque Japonés", "Plaza de la Paz"]
     else:
         return ["Lo sentimos, no encontramos información para esta ciudad."]
