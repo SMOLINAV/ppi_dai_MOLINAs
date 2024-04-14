@@ -3,7 +3,7 @@ from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contras
 from nueva_pestana import mostrar_pagina_busqueda
 from busqueda_colombia import buscar_lugares_ciudad
 from busquedaciudadpais import buscar_lugares_ciudad_pais
-from duracionvuelo import calcular_duracion_vuelo
+# from duracionvuelo import calcular_duracion_vuelo
 
 
 # Cargar usuarios al iniciar la aplicación
@@ -78,11 +78,16 @@ else:
 # sección "Duración de Vuelo"
 st.header("Duración Vuelo")
 if st.session_state.usuario:
-    distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
-    if distancia_km:
-        velocidad_promedio_kmh = 800  # Velocidad promedio de un avión
-        duracion_vuelo = calcular_duracion_vuelo(distancia_km, velocidad_promedio_kmh)
-        st.write("Duración del vuelo:", duracion_vuelo, "horas")
+    def calcular_duracion_vuelo():
+    # Entrada de distancia en kilómetros
+        distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
+
+    # Velocidad promedio de un avión en kilómetros por hora
+        velocidad_promedio_kmh = 800
+    # Botón para calcular la duración del vuelo
+        if st.button("Calcular Duración del Vuelo"):
+            duracion_vuelo = calcular_duracion_vuelo(distancia_km, velocidad_promedio_kmh)
+            st.write("Duración del vuelo:", duracion_vuelo, "horas")
 else:
     st.write("Por favor, inicia sesión para acceder a la función de duración de vuelo.")
 
