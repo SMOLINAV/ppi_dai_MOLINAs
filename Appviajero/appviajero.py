@@ -1,4 +1,7 @@
 import streamlit as st
+import numpy as np
+import pandas as pd
+
 from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contraseña
 from nueva_pestana import mostrar_pagina_busqueda
 from busqueda_colombia import buscar_lugares_ciudad
