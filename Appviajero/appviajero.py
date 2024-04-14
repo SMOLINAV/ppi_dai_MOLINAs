@@ -44,9 +44,9 @@ if usuario:
             for lugar in lugares:
                 st.write(f"- {lugar}")
 else:
-    st.write("Por favor, inicia sesión para acceder a esta función.")
+    st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de America.")
 
-    
+
 
 # Sección "Acerca de mí"
 st.header("Acerca de Mí")
