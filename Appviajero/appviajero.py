@@ -47,7 +47,7 @@ else:
 
 
 # Seccion buscar lugares Colombia
-st.header("Buscar Lugares En Colombia")
+st.header("<span style='color:orange'>Buscar Lugares En Colombia", unsafe_allow_html=True)
 ciudad = st.text_input("Ingrese el nombre de una ciudad colombiana:")
 if ciudad:
     lugares = buscar_lugares_ciudad(ciudad)
