@@ -7,6 +7,11 @@ from busquedaciudadpais import buscar_lugares_ciudad_pais
 # Cargar usuarios al iniciar la aplicación
 usuarios = cargar_usuarios()
 
+# Mantener seccion
+def manage_session():
+    if 'usuario' not in st.session_state:
+        st.session_state.usuario = None
+
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ - Planificador de Viajes")
 
