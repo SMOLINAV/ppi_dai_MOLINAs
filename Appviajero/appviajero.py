@@ -35,16 +35,31 @@ elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
 
 # Sección de cambio de contraseña
-st.button("Cambiar Contraseña")
-if st.session_state.usuario:
-    contraseña_actual = st.text_input("Contraseña Actual", type="password")
-    nueva_contraseña = st.text_input("Nueva Contraseña", type="password")
+if opcion_autenticacion == "Cambiar Contraseña":
+    st.header("Cambiar Contraseña")
 
-    if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == "Si" and st.button("Cambiar Contraseña"):
-        cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
+    # Variable de estado para controlar si se ha presionado el botón de cambiar contraseña
+    cambiar_contraseña_pressed = st.session_state.get("cambiar_contraseña_pressed", False)
+
+    # Si se ha presionado el botón de cambiar contraseña, mostrar los campos de contraseña actual y nueva
+    if cambiar_contraseña_pressed:
+        if st.session_state.usuario:
+            contraseña_actual = st.text_input("Contraseña Actual", type="password")
+            nueva_contraseña = st.text_input("Nueva Contraseña", type="password")
+
+            if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Sí")) == "Sí" and st.button("Cambiar Contraseña"):
+                cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
+        else:
+            st.write("Por favor, inicia sesión para cambiar la contraseña.")
+    else:
+        # Mostrar el botón de cambiar contraseña
+        if st.button("Cambiar Contraseña"):
+            # Actualizar la variable de estado para indicar que se ha presionado el botón
+            st.session_state.cambiar_contraseña_pressed = True
 else:
-    st.write("Por favor, inicia sesión para cambiar la contraseña.")                
+    st.write("Selecciona la opción 'Cambiar Contraseña' para cambiar tu contraseña.")
 
+    
 # Seccion buscar lugares Colombia
 st.header("Buscar Lugares en Colombia")
 ciudad = st.text_input("Ingrese el nombre de una ciudad colombiana:")
