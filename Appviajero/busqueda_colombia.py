@@ -72,5 +72,9 @@ def buscar_lugares_ciudad(ciudad):
         return ["Carnaval de Oruro", "Catedral Basílica Menor de San Felipe", "Museo Nacional Antropológico", "Mirador del Cerro Santa Bárbara"]
     elif ciudad.lower() == "tarija":
         return ["Catedral San Bernardo", "Plaza Luis de Fuentes", "Museo Paleontológico y Arqueológico", "Parque Temático Megalítico"]
+    elif ciudad.lower() == "cisneros":
+        return ["Iglesia de Nuestra Señora de las Mercedes", "Cerro El Capiro", "Parque Recreacional Capiro y Campana", "Mirador de la Virgen"]
+    elif ciudad.lower() == "rionegro":
+        return ["Parque Principal Santander", "Iglesia de Nuestra Señora del Rosario", "Cascada La Romera", "Laguna El Tablazo"]
     else:
         return ["Lo sentimos, no encontramos información para esta ciudad."]
