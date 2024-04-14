@@ -43,7 +43,8 @@ if ciudad:
     for lugar in lugares:
         st.write(f"- {lugar}")
 
-
+# Seccion buscar lugares paises América
+st.header("Buscar Lugares en América")
 if st.session_state.usuario:
    paises = ["Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba", "Estados Unidos", "México", "Panamá", "Paraguay", "Perú", "Puerto Rico", "Uruguay", "Venezuela"]
    pais = st.selectbox("Seleccione un país:", sorted(paises))
@@ -55,7 +56,7 @@ if st.session_state.usuario:
             for lugar in lugares:
                 st.write(f"- {lugar}")
 else:
-    st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de America.")
+    st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
 
 
 
