@@ -35,14 +35,10 @@ elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
 
 # Sección de cambio de contraseña
-st.header("Cambiar Contraseña")
-if st.session_state.usuario:
-    contraseña_actual = st.text_input("Contraseña Actual", type="password")
-    nueva_contraseña = st.text_input("Nueva Contraseña", type="password")
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+if opcion_autenticacion == "Cambiar Contraseña":
+    st.header("Cambiar Contraseña")
+
     # Variable de estado para controlar si se ha presionado el botón de cambiar contraseña
     cambiar_contraseña_pressed = st.session_state.get("cambiar_contraseña_pressed", False)
 
@@ -61,31 +57,10 @@ if st.session_state.usuario:
                 cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
         else:
             st.write("Por favor, inicia sesión para cambiar la contraseña.")
-=======
-    if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == "Si" and st.button("Cambiar Contraseña"):
-        cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
->>>>>>> parent of a5add43 (quizas con boton)
 else:
-    st.write("Por favor, inicia sesión para cambiar la contraseña.")                
+    st.write("Selecciona la opción 'Cambiar Contraseña' para cambiar tu contraseña.")
 
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of a5add43 (quizas con boton)
-=======
-    if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == "Si" and st.button("Cambiar Contraseña"):
-        cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
-else:
-    st.write("Por favor, inicia sesión para cambiar la contraseña.")                
-
->>>>>>> parent of a5add43 (quizas con boton)
-=======
-    if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == "Si" and st.button("Cambiar Contraseña"):
-        cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
-else:
-    st.write("Por favor, inicia sesión para cambiar la contraseña.")                
-
->>>>>>> parent of a5add43 (quizas con boton)
 # Seccion buscar lugares Colombia
 st.header("Buscar Lugares en Colombia")
 ciudad = st.text_input("Ingrese el nombre de una ciudad colombiana:")
