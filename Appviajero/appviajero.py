@@ -25,6 +25,8 @@ opcion_autenticacion = st.radio("Selecciona una opción:", ("Iniciar Sesión", "
 if opcion_autenticacion == "Iniciar Sesión":
     usuario = iniciar_sesion(usuarios)
     if usuario:
+        if usuario:
+            st.session_state.usuario = usuario  # Guardar el usuario en la sesión
         # Botón para ir a la nueva página
         if st.button("Ir a la nueva página"):
             mostrar_pagina_busqueda()
