@@ -3,7 +3,7 @@ from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contras
 from nueva_pestana import mostrar_pagina_busqueda
 from busqueda_colombia import buscar_lugares_ciudad
 from busquedaciudadpais import buscar_lugares_ciudad_pais
-from duracionvuelo import calcular_duracion_vuelo
+'''from duracionvuelo import calcular_duracion_vuelo'''
 
 # Cargar usuarios al iniciar la aplicación
 usuarios = cargar_usuarios()
