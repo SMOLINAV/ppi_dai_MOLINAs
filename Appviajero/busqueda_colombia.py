@@ -28,5 +28,23 @@ def buscar_lugares_ciudad(ciudad):
         return ["Parque Nacional del Chicamocha", "Parque del Agua", "Catedral de la Sagrada Familia", "Cascada de Juan Curi"]
     elif ciudad.lower() == "barranquilla":
         return ["Malecón Puerta de Oro", "Museo del Caribe", "Castillo de Salgar", "Plaza de San Nicolás"]
+    elif ciudad.lower() == "cúcuta":
+        return ["Parque Nacional Natural Los Estoraques", "Museo del Agua", "Catedral de San José", "Mirador Cristo Rey"]
+    elif ciudad.lower() == "manizales":
+        return ["Nevado del Ruiz", "Catedral Basílica Metropolitana de Manizales", "Cable Aéreo de Manizales", "Parque Natural Regional Río Blanco"]
+    elif ciudad.lower() == "pasto":
+        return ["Volcán Galeras", "Plaza de Nariño", "Laguna de la Cocha", "Iglesia de San Felipe"]
+    elif ciudad.lower() == "valledupar":
+        return ["Parque de la Leyenda Vallenata", "Museo del Acordeón", "Cerro de la Popa", "Catedral de Santa Bárbara de Valledupar"]
+    elif ciudad.lower() == "ibagué":
+        return ["Nevado del Tolima", "Jardín Botánico San Jorge", "Catedral Primada de Ibagué", "Lago del Totumo"]
+    elif ciudad.lower() == "villavicencio":
+        return ["Parque Los Ocarros", "Bioparque Makuira", "Catedral Nuestra Señora del Carmen", "Mirador El Calvario"]
+    elif ciudad.lower() == "montería":
+        return ["Parque Nacional Natural Paramillo", "Catedral San Jerónimo de Montería", "Parque Ronda del Sinú", "Plaza Cultural de la Castellana"]
+    elif ciudad.lower() == "manizales":
+        return ["Nevado del Ruiz", "Catedral Basílica Metropolitana de Manizales", "Cable Aéreo de Manizales", "Parque Natural Regional Río Blanco"]
+    elif ciudad.lower() == "sogamoso":
+        return ["Laguna de Tota", "Catedral Basílica del Milagroso Señor de los Milagros", "Monumento a la Virgen del Milagro", "Parque Arqueológico de Monquirá"]
     else:
         return ["Lo sentimos, no encontramos información para esta ciudad."]
