@@ -45,8 +45,9 @@ if ciudad:
 
 
 if st.session_state.usuario:
-    pais = st.selectbox("Seleccione un país:", ("Argentina", "Brasil", "México"))
-    if pais:
+   paises = ["Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba", "Estados Unidos", "México", "Panamá", "Paraguay", "Perú", "Puerto Rico", "Uruguay", "Venezuela"]
+   pais = st.selectbox("Seleccione un país:", sorted(paises))
+   if pais:
         ciudades = buscar_lugares_ciudad_pais(pais)
         st.write(f"Ciudades importantes de {pais.capitalize()}:")
         for ciudad, lugares in ciudades.items():
