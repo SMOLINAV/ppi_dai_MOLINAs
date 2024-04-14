@@ -77,7 +77,7 @@ def buscar_lugares_ciudad(ciudad):
     elif ciudad.lower() == "rionegro":
         return ["Parque Principal Santander", "Iglesia de Nuestra Señora del Rosario", "Cascada La Romera", "Laguna El Tablazo"]
     elif ciudad.lower() == "guatapé":
-        return ["Piedra del Peñol", "Represa de Guatapé", "Malecón de Guatapé", "Iglesia de Nuestra Señora del Carmen"]
+        return ["Peñon de Guatapé", "Represa de Guatapé", "Malecón de Guatapé", "Plazoleta de los zócalos"]
     elif ciudad.lower() == "marinilla":
         return ["Parque Principal de Marinilla", "Iglesia de San José", "Mirador de la Cruz", "Cascada La Chorrera"]
     elif ciudad.lower() == "guarne":
