@@ -35,7 +35,7 @@ elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
 
 # Sección de cambio de contraseña
-st.header("Cambiar Contraseña")
+st.button("Cambiar Contraseña")
 if st.session_state.usuario:
     contraseña_actual = st.text_input("Contraseña Actual", type="password")
     nueva_contraseña = st.text_input("Nueva Contraseña", type="password")
