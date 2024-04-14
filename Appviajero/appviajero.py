@@ -13,7 +13,7 @@ def manage_session():
         st.session_state.usuario = None
 
 # Título de la aplicación
-st.title("APP VIAJEROFELIZ - Planificador de Viajes")
+st.title("APP VIAJEROFELIZ")
 
 # Manejo de la sesión
 manage_session()
