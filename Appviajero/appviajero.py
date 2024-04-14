@@ -1,6 +1,7 @@
 import streamlit as st
 from auth import cargar_usuarios, crear_usuario, iniciar_sesion
 from nueva_pestana import mostrar_pagina_busqueda
+from busqueda_colombia import buscar_lugares_ciudad
 
 # Cargar usuarios al iniciar la aplicación
 usuarios = cargar_usuarios()
@@ -22,6 +23,16 @@ if opcion_autenticacion == "Iniciar Sesión":
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
 
+
+st.header("Buscar Lugares en Colombia")
+ciudad = st.text_input("Ingrese el nombre de una ciudad colombiana:")
+if ciudad:
+    lugares = buscar_lugares_ciudad(ciudad)
+    st.write(f"Lugares bonitos e importantes de {ciudad.capitalize()}:")
+    for lugar in lugares:
+        st.write(f"- {lugar}")
+
+        
 # Sección "Acerca de mí"
 st.header("Acerca de Mí")
 st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante 
@@ -61,4 +72,4 @@ Nos comprometemos a ser transparentes en nuestras prácticas de privacidad y seg
 Gracias por confiar en nosotros para planificar tus aventuras. 
          ¡Esperamos que disfrutes explorando el mundo con nuestra aplicación!
          ''')
-# Agrega aquí la funcionalidad de tratamiento de datos según lo que se necesite
+
