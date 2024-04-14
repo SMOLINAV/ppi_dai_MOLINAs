@@ -9,9 +9,3 @@ def calcular_duracion_vuelo(distancia_km, velocidad_promedio_kmh):
     
     return duracion_horas
 
-# Calculo de la duración del vuelo
-distancia_km = float(input("Ingrese la distancia entre los dos puntos en kilómetros: "))
-velocidad_promedio_kmh = 800  # Velocidad promedio de un avión
-
-duracion_vuelo = calcular_duracion_vuelo(distancia_km, velocidad_promedio_kmh)
-print("Duración del vuelo:", duracion_vuelo, "horas")
