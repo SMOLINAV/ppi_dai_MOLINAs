@@ -3,7 +3,7 @@ from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contras
 from nueva_pestana import mostrar_pagina_busqueda
 from busqueda_colombia import buscar_lugares_ciudad
 from busquedaciudadpais import buscar_lugares_ciudad_pais
-from duracionvuelo import calcular_duracion_vuelo
+'''from duracionvuelo import calcular_duracion_vuelo'''
 
 # Cargar usuarios al iniciar la aplicación
 usuarios = cargar_usuarios()
@@ -75,7 +75,7 @@ else:
     st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
 
 # sección "Duración de Vuelo"
-st.header("Duración Vuelo")
+'''st.header("Duración Vuelo")
 if st.session_state.usuario:
     distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
     if distancia_km:
@@ -84,7 +84,7 @@ if st.session_state.usuario:
         st.write("Duración del vuelo:", duracion_vuelo, "horas")
 else:
     st.write("Por favor, inicia sesión para acceder a la función de duración de vuelo.")
-
+'''
 
 # Sección "Acerca de mí"
 st.write("<span style='color:green'>Acerca De Mí</span>", unsafe_allow_html=True)
