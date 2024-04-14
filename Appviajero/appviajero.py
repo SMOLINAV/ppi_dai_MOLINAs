@@ -35,6 +35,9 @@ elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
 
 # Sección de cambio de contraseña
+if st.session_state.usuario:
+    st.header("Bienvenido")
+    st.write(f"Bienvenido, {st.session_state.usuario}!")
     st.write("A continuación, puedes acceder a otras funcionalidades:")
     if st.button("Cambiar Contraseña"):
         # Aquí puedes poner el código para mostrar la sección de configuración
@@ -47,6 +50,8 @@ elif opcion_autenticacion == "Registrarse":
                 cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
     else:
         st.write("Por favor, inicia sesión para cambiar la contraseña.")
+else:
+    st.write("Por favor, inicia sesión para acceder a esta función.")        
 
 
 # Seccion buscar lugares Colombia
