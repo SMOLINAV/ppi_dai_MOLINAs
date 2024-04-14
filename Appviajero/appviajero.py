@@ -74,7 +74,7 @@ else:
 
 
 # Sección "Acerca de mí"
-st.header("### Acerca De Mí")
+st.write("### Acerca De Mí")
 st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante 
              de ingeniería de sistemas en la Universidad Nacional de Colombia. 
              Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones 
@@ -85,7 +85,7 @@ st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante
 st.write("Puedes contactarme en smolinav@unal.edu.co")
 
 # Sección "Tratamiento de Datos"
-st.header("Tratamiento de Datos")
+st.write("### Tratamiento De Datos")
 st.write('''Tratamiento de Datos en nuestra Nueva Aplicación de Viajes
 
 En nuestra emocionante nueva aplicación de viajes, nos esforzamos por brindar una experiencia 
