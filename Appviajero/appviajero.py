@@ -1,5 +1,5 @@
 import streamlit as st
-from auth import cargar_usuarios, crear_usuario, iniciar_sesion
+from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contraseña
 from nueva_pestana import mostrar_pagina_busqueda
 from busqueda_colombia import buscar_lugares_ciudad
 from busquedaciudadpais import buscar_lugares_ciudad_pais
@@ -42,6 +42,16 @@ if ciudad:
     st.write(f"Lugares bonitos e importantes de {ciudad.capitalize()}:")
     for lugar in lugares:
         st.write(f"- {lugar}")
+
+# Sección de cambio de contraseña
+st.header("Cambiar Contraseña")
+if st.session_state.usuario:
+    contraseña_actual = st.text_input("Contraseña Actual", type="password")
+    nueva_contraseña = st.text_input("Nueva Contraseña", type="password")
+
+    if st.button("Cambiar Contraseña"):
+        cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
+                
 
 # Seccion buscar lugares paises América
 st.header("Buscar Lugares en América")
