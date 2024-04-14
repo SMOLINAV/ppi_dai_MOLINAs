@@ -2,6 +2,7 @@ import streamlit as st
 from auth import cargar_usuarios, crear_usuario, iniciar_sesion
 from nueva_pestana import mostrar_pagina_busqueda
 from busqueda_colombia import buscar_lugares_ciudad
+from busquedaciudadpais import buscar_lugares_ciudad_pais
 
 # Cargar usuarios al iniciar la aplicación
 usuarios = cargar_usuarios()
@@ -23,7 +24,7 @@ if opcion_autenticacion == "Iniciar Sesión":
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
 
-
+# Seccion buscar lugares Colombia
 st.header("Buscar Lugares en Colombia")
 ciudad = st.text_input("Ingrese el nombre de una ciudad colombiana:")
 if ciudad:
@@ -32,7 +33,17 @@ if ciudad:
     for lugar in lugares:
         st.write(f"- {lugar}")
 
-        
+
+pais = st.selectbox("Seleccione un país:", ("Argentina", "Brasil", "México"))
+if pais:
+    ciudades = buscar_lugares_ciudad_pais(pais)
+    st.write(f"Ciudades importantes de {pais.capitalize()}:")
+    for ciudad, lugares in ciudades.items():
+        st.write(f"{ciudad}:")
+        for lugar in lugares:
+            st.write(f"- {lugar}")
+
+
 # Sección "Acerca de mí"
 st.header("Acerca de Mí")
 st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante 
