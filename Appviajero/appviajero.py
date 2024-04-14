@@ -27,10 +27,7 @@ if opcion_autenticacion == "Iniciar Sesión":
     if usuario:
         if usuario:
             st.session_state.usuario = usuario  # Guardar el usuario en la sesión
-        # Botón para ir a la nueva página
-        if st.button("Ir a la nueva página"):
-            mostrar_pagina_busqueda()
-
+            
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
 
