@@ -86,5 +86,7 @@ def buscar_lugares_ciudad(ciudad):
         return ["Parque Principal de Sopetrán", "Iglesia de Nuestra Señora de las Mercedes", "Cascada El Salado", "Cerro El Picacho"]
     elif ciudad.lower() == "santa fe":
         return ["Cascada La Mina", "Mirador de Santa Fe", "Plaza Principal de Santa Fe", "Iglesia de Santa Bárbara"]
+    elif ciudad.lower() == "armenia":
+        return ["Jardín Botánico del Quindío", "Parque de la Vida", "Café Park", "Iglesia de San Francisco de Asís"]
     else:
         return ["Lo sentimos, no encontramos información para esta ciudad."]
