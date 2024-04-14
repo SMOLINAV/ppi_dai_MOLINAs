@@ -42,8 +42,6 @@ def buscar_lugares_ciudad(ciudad):
         return ["Parque Los Ocarros", "Bioparque Makuira", "Catedral Nuestra Señora del Carmen", "Mirador El Calvario"]
     elif ciudad.lower() == "montería":
         return ["Parque Nacional Natural Paramillo", "Catedral San Jerónimo de Montería", "Parque Ronda del Sinú", "Plaza Cultural de la Castellana"]
-    elif ciudad.lower() == "manizales":
-        return ["Nevado del Ruiz", "Catedral Basílica Metropolitana de Manizales", "Cable Aéreo de Manizales", "Parque Natural Regional Río Blanco"]
     elif ciudad.lower() == "sogamoso":
         return ["Laguna de Tota", "Catedral Basílica del Milagroso Señor de los Milagros", "Monumento a la Virgen del Milagro", "Parque Arqueológico de Monquirá"]
     elif ciudad.lower() == "arauca":
@@ -62,5 +60,17 @@ def buscar_lugares_ciudad(ciudad):
         return ["Laguna de Yarinacocha", "Catedral Nuestra Señora de la Asunción", "Mercado de Belén", "Plaza Mayor"]
     elif ciudad.lower() == "mitú":
         return ["Reserva Nacional Natural Puinawai", "Catedral de San José", "Parque Japonés", "Plaza de la Paz"]
+    elif ciudad.lower() == "trinidad":
+        return ["Iglesia de la Santísima Trinidad", "Parque Nacional Madidi", "Museo de Historia Natural Noel Kempff Mercado", "Malecón de la Costanera"]
+    elif ciudad.lower() == "sacaba":
+        return ["Iglesia de San Pedro", "Parque Nacional Tunari", "Casa de la Cultura de Sacaba", "Jardín Botánico La Boliviana"]
+    elif ciudad.lower() == "cobija":
+        return ["Catedral de Cobija", "Plaza 10 de Febrero", "Parque Nacional Madidi", "Iglesia de San Pedro"]
+    elif ciudad.lower() == "sucre":
+        return ["Catedral de Nuestra Señora de Guadalupe", "Plaza 25 de Mayo", "Parque Cretácico", "Iglesia de San Lázaro"]
+    elif ciudad.lower() == "oruro":
+        return ["Carnaval de Oruro", "Catedral Basílica Menor de San Felipe", "Museo Nacional Antropológico", "Mirador del Cerro Santa Bárbara"]
+    elif ciudad.lower() == "tarija":
+        return ["Catedral San Bernardo", "Plaza Luis de Fuentes", "Museo Paleontológico y Arqueológico", "Parque Temático Megalítico"]
     else:
         return ["Lo sentimos, no encontramos información para esta ciudad."]
