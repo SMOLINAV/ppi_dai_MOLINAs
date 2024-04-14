@@ -75,16 +75,17 @@ else:
     st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
 
 # sección "Duración de Vuelo"
-st.header("Duración Vuelo")
+'''st.header("Duración Vuelo")
 if st.session_state.usuario:
-     distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
-     velocidad_promedio_kmh = 800  # Velocidad promedio de un avión
-     duracion_vuelo = calcular_duracion_vuelo(distancia_km, velocidad_promedio_kmh)
-     st.write("Duración del vuelo:", duracion_vuelo, "horas")
+    distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
+    if distancia_km:
+        velocidad_promedio_kmh = 800  # Velocidad promedio de un avión
+        duracion_vuelo = calcular_duracion_vuelo(distancia_km, velocidad_promedio_kmh)
+        st.write("Duración del vuelo:", duracion_vuelo, "horas")
 else:
     st.write("Por favor, inicia sesión para acceder a la función de duración de vuelo.")
+'''
 
-    
 # Sección "Acerca de mí"
 st.write("<span style='color:green'>Acerca De Mí</span>", unsafe_allow_html=True)
 st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante 
