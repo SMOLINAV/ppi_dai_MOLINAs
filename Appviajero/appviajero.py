@@ -34,7 +34,7 @@ if ciudad:
         st.write(f"- {lugar}")
 
 
-if usuario:
+if st.session_state.usuario:
     pais = st.selectbox("Seleccione un país:", ("Argentina", "Brasil", "México"))
     if pais:
         ciudades = buscar_lugares_ciudad_pais(pais)
