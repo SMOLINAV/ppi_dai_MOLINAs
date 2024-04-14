@@ -74,7 +74,7 @@ else:
 
 
 # Sección "Acerca de mí"
-st.write("<span style='color:green'>A Acerca De Mí</span>", unsafe_allow_html=True)
+st.write("<span style='color:green'>Acerca De Mí</span>", unsafe_allow_html=True)
 st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante 
              de ingeniería de sistemas en la Universidad Nacional de Colombia. 
              Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones 
