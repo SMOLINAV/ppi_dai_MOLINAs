@@ -51,7 +51,8 @@ if st.session_state.usuario:
 
     if st.button("Cambiar Contraseña"):
         cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
-                
+else:
+    st.write("Por favor, inicia sesión para cambiar la contraseña.")                
 
 # Seccion buscar lugares paises América
 st.header("Buscar Lugares en América")
