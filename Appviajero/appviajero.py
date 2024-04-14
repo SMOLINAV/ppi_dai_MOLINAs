@@ -34,15 +34,19 @@ if ciudad:
         st.write(f"- {lugar}")
 
 
-pais = st.selectbox("Seleccione un país:", ("Argentina", "Brasil", "México"))
-if pais:
-    ciudades = buscar_lugares_ciudad_pais(pais)
-    st.write(f"Ciudades importantes de {pais.capitalize()}:")
-    for ciudad, lugares in ciudades.items():
-        st.write(f"{ciudad}:")
-        for lugar in lugares:
-            st.write(f"- {lugar}")
+if usuario:
+    pais = st.selectbox("Seleccione un país:", ("Argentina", "Brasil", "México"))
+    if pais:
+        ciudades = buscar_lugares_ciudad_pais(pais)
+        st.write(f"Ciudades importantes de {pais.capitalize()}:")
+        for ciudad, lugares in ciudades.items():
+            st.write(f"{ciudad}:")
+            for lugar in lugares:
+                st.write(f"- {lugar}")
+else:
+    st.write("Por favor, inicia sesión para acceder a esta función.")
 
+    
 
 # Sección "Acerca de mí"
 st.header("Acerca de Mí")
