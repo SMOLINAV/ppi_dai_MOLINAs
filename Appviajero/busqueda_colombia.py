@@ -76,5 +76,15 @@ def buscar_lugares_ciudad(ciudad):
         return ["Iglesia de Nuestra Señora de las Mercedes", "Cerro El Capiro", "Parque Recreacional Capiro y Campana", "Mirador de la Virgen"]
     elif ciudad.lower() == "rionegro":
         return ["Parque Principal Santander", "Iglesia de Nuestra Señora del Rosario", "Cascada La Romera", "Laguna El Tablazo"]
+    elif ciudad.lower() == "guatapé":
+        return ["Piedra del Peñol", "Represa de Guatapé", "Malecón de Guatapé", "Iglesia de Nuestra Señora del Carmen"]
+    elif ciudad.lower() == "marinilla":
+        return ["Parque Principal de Marinilla", "Iglesia de San José", "Mirador de la Cruz", "Cascada La Chorrera"]
+    elif ciudad.lower() == "guarne":
+        return ["Parque Principal de Guarne", "Iglesia de San Juan Bautista", "Cerro Quitasol", "Cascada La Miel"]
+    elif ciudad.lower() == "sopetrán":
+        return ["Parque Principal de Sopetrán", "Iglesia de Nuestra Señora de las Mercedes", "Cascada El Salado", "Cerro El Picacho"]
+    elif ciudad.lower() == "santa fe":
+        return ["Cascada La Mina", "Mirador de Santa Fe", "Plaza Principal de Santa Fe", "Iglesia de Santa Bárbara"]
     else:
         return ["Lo sentimos, no encontramos información para esta ciudad."]
