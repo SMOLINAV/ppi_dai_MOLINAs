@@ -42,6 +42,7 @@ if st.session_state.usuario:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     # Variable de estado para controlar si se ha presionado el botón de cambiar contraseña
     cambiar_contraseña_pressed = st.session_state.get("cambiar_contraseña_pressed", False)
 
@@ -70,6 +71,13 @@ else:
 <<<<<<< HEAD
 
 =======
+>>>>>>> parent of a5add43 (quizas con boton)
+=======
+    if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == "Si" and st.button("Cambiar Contraseña"):
+        cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
+else:
+    st.write("Por favor, inicia sesión para cambiar la contraseña.")                
+
 >>>>>>> parent of a5add43 (quizas con boton)
 =======
     if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == "Si" and st.button("Cambiar Contraseña"):
