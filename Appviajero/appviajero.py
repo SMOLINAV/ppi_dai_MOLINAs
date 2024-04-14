@@ -36,11 +36,9 @@ elif opcion_autenticacion == "Registrarse":
 
 # Sección de cambio de contraseña
 if st.session_state.usuario:
-    st.header("Bienvenido")
-    st.write(f"Bienvenido, {st.session_state.usuario}!")
     st.write("A continuación, puedes acceder a otras funcionalidades:")
     if st.button("Cambiar Contraseña"):
-        # Aquí puedes poner el código para mostrar la sección de configuración
+        # cambiarcontracodigo
         st.write("<span style='color:orange'>Cambiar Contraseña</span>", unsafe_allow_html=True)
         if st.session_state.usuario:
             contraseña_actual = st.text_input("Contraseña Actual", type="password")
