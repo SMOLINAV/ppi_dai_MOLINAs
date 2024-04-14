@@ -38,3 +38,12 @@ def iniciar_sesion(usuarios):
         else:
             st.success(f"Bienvenido, {usuario}! Has iniciado sesión exitosamente.")
             return usuario
+
+def cambiar_contraseña(usuario, nueva_contraseña):
+    usuarios = cargar_usuarios()
+    if usuario in usuarios:
+        usuarios[usuario] = nueva_contraseña
+        guardar_usuarios(usuarios)
+        st.success("Contraseña actualizada exitosamente.")
+    else:
+        st.error("Usuario no encontrado. Por favor, inicia sesión nuevamente.")
