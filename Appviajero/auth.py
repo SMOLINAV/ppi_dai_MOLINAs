@@ -1,6 +1,15 @@
 import streamlit as st
 import json
+'''
+sirve para el manejo de usuarios
 
+Args:
+    None
+
+Returns:
+    dict: diccionario de usuarios
+    
+'''
 def cargar_usuarios():
     try:
         with open("usuarios.json", "r") as f:

@@ -1,5 +1,14 @@
 # Debe buscar las ciudades del pais que se le ingrese
 def buscar_lugares_ciudad_pais(pais):
+    '''
+    sirve para buscar las ciudades del pais que se le ingrese
+
+    Args:
+        pais (str): nombre del pais
+
+    Returns:
+        dict: diccionario con las ciudades del pais
+    '''
     if pais.lower() == "argentina":
         return {
             "Buenos Aires": ["Casa Rosada", "Recoleta", "Caminito"],
