@@ -123,19 +123,14 @@ Gracias por confiar en nosotros para planificar tus aventuras.
          ¡Esperamos que disfrutes explorando el mundo con nuestra aplicación!
          ''')
 
-def calcular_distancia_total(distancias):
-    distancia_total = np.sum(distancias)
-    return distancia_total
+def calcular_duracion_vuelo():
+    # Entrada de distancia en kilómetros
+    distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
 
-# Sección para ingresar distancias entre ciudades
-st.header("Calcular Distancia Total entre Ciudades")
-num_distancias = st.number_input("Ingrese el número de distancias:", min_value=0, step=1)
-distancias = []
-for i in range(num_distancias):
-    distancia = st.number_input(f"Ingrese la distancia {i+1} en kilómetros:", min_value=0.0, step=1.0)
-    distancias.append(distancia)
+    # Velocidad promedio de un avión en kilómetros por hora
+    velocidad_promedio_kmh = 800
 
-# Botón para calcular la distancia total
-if st.button("Calcular Distancia Total"):
-    distancia_total = calcular_distancia_total(distancias)
-    st.write("La distancia total entre las ciudades es:", distancia_total, "kilómetros")
+    # Botón para calcular la duración del vuelo
+    if st.button("Calcular Duración del Vuelo"):
+        duracion_vuelo = distancia_km / velocidad_promedio_kmh
+        st.write("Duración del vuelo:", duracion_vuelo, "horas")
