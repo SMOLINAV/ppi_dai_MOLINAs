@@ -23,7 +23,8 @@ manage_session()
 
 # Sección de "Iniciar Sesión" o "Registrarse"
 st.header("Autenticación")
-opcion_autenticacion = st.radio("Selecciona una opción:", ("Iniciar Sesión", "Registrarse"))
+opcion_autenticacion = st.radio("Selecciona una opción:", ("Iniciar Sesión", 
+                                                           "Registrarse"))
 
 if opcion_autenticacion == "Iniciar Sesión":
     usuario = iniciar_sesion(usuarios)
@@ -36,12 +37,16 @@ elif opcion_autenticacion == "Registrarse":
 # Sección de cambio de contraseña
 if st.session_state.usuario:
     if st.button("Cambiar Contraseña"):
-        st.write("<span style='color:orange'>Cambiar Contraseña</span>", unsafe_allow_html=True)
+        st.write("<span style='color:orange'>Cambiar Contraseña</span>", 
+                 unsafe_allow_html=True)
         if st.session_state.usuario:
-            contraseña_actual = st.text_input("Contraseña Actual", type="password")
-            nueva_contraseña = st.text_input("Nueva Contraseña", type="password")
+            contraseña_actual = st.text_input("Contraseña Actual", 
+                                              type="password")
+            nueva_contraseña = st.text_input("Nueva Contraseña", 
+                                             type="password")
             
-            if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == "Si" and st.button("Cambiar Contraseña"):
+            if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == 
+            "Si" and st.button("Cambiar Contraseña"):
                 cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
     else:
         st.write("")
@@ -64,7 +69,8 @@ if ciudad:
 st.header("Buscar Lugares En América")
 if st.session_state.usuario:
     paises = [
-        "Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba", "Estados Unidos", "México",
+        "Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba",
+        "Estados Unidos", "México",
         "Panamá", "Paraguay", "Perú", "Puerto Rico", "Uruguay", "Venezuela"
     ]
     pais = st.selectbox("Seleccione un país:", sorted(paises))
