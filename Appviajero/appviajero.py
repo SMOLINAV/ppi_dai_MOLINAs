@@ -79,7 +79,7 @@ else:
 # sección "Duración de Vuelo"
 st.header("Duración Vuelo")
 if st.session_state.usuario:
-    duracionvuelo.calcular_duracion_vuelo()
+#    duracionvuelo.calcular_duracion_vuelo()
     st.write("Por favor, inicia sesión para acceder a la función de duración de vuelo.")
 
 
