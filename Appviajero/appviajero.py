@@ -1,5 +1,5 @@
 import streamlit as st
-import numpy as np
+
 from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contraseña
 from nueva_pestana import mostrar_pagina_busqueda
 from busqueda_colombia import buscar_lugares_ciudad
@@ -9,10 +9,12 @@ from busquedaciudadpais import buscar_lugares_ciudad_pais
 # Cargar usuarios al iniciar la aplicación
 usuarios = cargar_usuarios()
 
+
 # Mantener seccion
 def manage_session():
     if 'usuario' not in st.session_state:
         st.session_state.usuario = None
+
 
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
@@ -27,8 +29,7 @@ opcion_autenticacion = st.radio("Selecciona una opción:", ("Iniciar Sesión", "
 if opcion_autenticacion == "Iniciar Sesión":
     usuario = iniciar_sesion(usuarios)
     if usuario:
-        if usuario:
-            st.session_state.usuario = usuario  # Guardar el usuario en la sesión
+        st.session_state.usuario = usuario  # Guardar el usuario en la sesión
 
 elif opcion_autenticacion == "Registrarse":
     crear_usuario(usuarios)
@@ -36,7 +37,6 @@ elif opcion_autenticacion == "Registrarse":
 # Sección de cambio de contraseña
 if st.session_state.usuario:
     if st.button("Cambiar Contraseña"):
-        # cambiarcontracodigo
         st.write("<span style='color:orange'>Cambiar Contraseña</span>", unsafe_allow_html=True)
         if st.session_state.usuario:
             contraseña_actual = st.text_input("Contraseña Actual", type="password")
@@ -46,6 +46,7 @@ if st.session_state.usuario:
                 cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
     else:
         st.write("")
+
 else:
     st.write("")        
 
@@ -63,44 +64,47 @@ if ciudad:
 # Seccion buscar lugares paises América
 st.header("Buscar Lugares En América")
 if st.session_state.usuario:
-   paises = ["Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba", "Estados Unidos", "México", "Panamá", "Paraguay", "Perú", "Puerto Rico", "Uruguay", "Venezuela"]
-   pais = st.selectbox("Seleccione un país:", sorted(paises))
-   if pais:
+    paises = ["Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba", "Estados Unidos", "México", "Panamá", "Paraguay", "Perú", "Puerto Rico", "Uruguay", "Venezuela"]
+    pais = st.selectbox("Seleccione un país:", sorted(paises))
+    if pais:
         ciudades = buscar_lugares_ciudad_pais(pais)
         st.write(f"Ciudades importantes de {pais.capitalize()}:")
         for ciudad, lugares in ciudades.items():
             st.write(f"{ciudad}:")
             for lugar in lugares:
                 st.write(f"- {lugar}")
+
 else:
     st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
 
-# Función para calcular el tiempo de vuelo promedio
+
+# Sección "Calcular Tiempo Promedio De Vuelo"
 st.header("Calcular Tiempo Promedio De Vuelo")
 if st.session_state.usuario:
+    # Función para calcular el tiempo de vuelo promedio
     def calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh):
-    # Convertir la velocidad de km/h a km/min
+        # Convertir la velocidad de km/h a km/min
         velocidad_promedio_kmmin = velocidad_promedio_kmh / 60.0
-    # Calcular el tiempo de vuelo promedio en minutos
+        # Calcular el tiempo de vuelo promedio en minutos
         tiempo_vuelo_promedio_min = distancia_km / velocidad_promedio_kmmin
-    # Convertir el tiempo de vuelo promedio a horas
+        # Convertir el tiempo de vuelo promedio a horas
         tiempo_vuelo_promedio_horas = tiempo_vuelo_promedio_min / 60.0
         return tiempo_vuelo_promedio_horas
 
-# Sección para ingresar la distancia
+    # Sección para ingresar la distancia
     distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
 
-
-
-# Velocidad promedio de un avión en kilómetros por hora
+    # Velocidad promedio de un avión en kilómetros por hora
     velocidad_promedio_kmh = 800
 
-# Botón para calcular el tiempo de vuelo promedio
+    # Botón para calcular el tiempo de vuelo promedio
     if st.button("Calcular Tiempo de Vuelo Promedio"):
         tiempo_vuelo_promedio = calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh)
         st.write("El tiempo de vuelo promedio es:", tiempo_vuelo_promedio, "horas")
+
 else:
     st.write("Por favor, inicia sesión para acceder a la función para calcular el tiempo de vuelo promedio.")
+
 
 # Sección "Acerca de mí"
 st.write("<span style='color:green'>Acerca De Mí</span>", unsafe_allow_html=True)
@@ -141,4 +145,3 @@ Nos comprometemos a ser transparentes en nuestras prácticas de privacidad y seg
 Gracias por confiar en nosotros para planificar tus aventuras. 
          ¡Esperamos que disfrutes explorando el mundo con nuestra aplicación!
          ''')
-
