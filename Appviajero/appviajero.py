@@ -4,7 +4,7 @@ from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contras
 from nueva_pestana import mostrar_pagina_busqueda
 from busqueda_colombia import buscar_lugares_ciudad
 from busquedaciudadpais import buscar_lugares_ciudad_pais
-import duracionvuelo
+# import duracionvuelo
 
 
 # Cargar usuarios al iniciar la aplicación
@@ -79,7 +79,7 @@ else:
 # sección "Duración de Vuelo"
 st.header("Duración Vuelo")
 if st.session_state.usuario:
-    duracionvuelo.calcular_duracion_vuelo()
+#   duracionvuelo.calcular_duracion_vuelo()
     st.write("Por favor, inicia sesión para acceder a la función de duración de vuelo.")
 
 
@@ -123,3 +123,19 @@ Gracias por confiar en nosotros para planificar tus aventuras.
          ¡Esperamos que disfrutes explorando el mundo con nuestra aplicación!
          ''')
 
+def calcular_distancia_total(distancias):
+    distancia_total = np.sum(distancias)
+    return distancia_total
+
+# Sección para ingresar distancias entre ciudades
+st.header("Calcular Distancia Total entre Ciudades")
+num_distancias = st.number_input("Ingrese el número de distancias:", min_value=0, step=1)
+distancias = []
+for i in range(num_distancias):
+    distancia = st.number_input(f"Ingrese la distancia {i+1} en kilómetros:", min_value=0.0, step=1.0)
+    distancias.append(distancia)
+
+# Botón para calcular la distancia total
+if st.button("Calcular Distancia Total"):
+    distancia_total = calcular_distancia_total(distancias)
+    st.write("La distancia total entre las ciudades es:", distancia_total, "kilómetros")
