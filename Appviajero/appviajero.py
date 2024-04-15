@@ -4,7 +4,7 @@ from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contras
 from nueva_pestana import mostrar_pagina_busqueda
 from busqueda_colombia import buscar_lugares_ciudad
 from busquedaciudadpais import buscar_lugares_ciudad_pais
-# import duracionvuelo
+import duracionvuelo
 
 
 # Cargar usuarios al iniciar la aplicación
@@ -79,7 +79,7 @@ else:
 # sección "Duración de Vuelo"
 st.header("Duración Vuelo")
 if st.session_state.usuario:
-#    duracionvuelo.calcular_duracion_vuelo()
+    duracionvuelo.calcular_duracion_vuelo()
     st.write("Por favor, inicia sesión para acceder a la función de duración de vuelo.")
 
 

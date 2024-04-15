@@ -1,4 +1,5 @@
 import streamlit as st
+
 def calcular_duracion_vuelo():
     # Entrada de distancia en kilómetros
     distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
@@ -8,5 +9,5 @@ def calcular_duracion_vuelo():
 
     # Botón para calcular la duración del vuelo
     if st.button("Calcular Duración del Vuelo"):
-        duracion_vuelo = calcular_duracion_vuelo(distancia_km, velocidad_promedio_kmh)
+        duracion_vuelo = distancia_km / velocidad_promedio_kmh
         st.write("Duración del vuelo:", duracion_vuelo, "horas")
