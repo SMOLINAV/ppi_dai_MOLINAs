@@ -45,8 +45,7 @@ if st.session_state.usuario:
             nueva_contraseña = st.text_input("Nueva Contraseña", 
                                              type="password")
             
-            if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == 
-            "Si" and st.button("Cambiar Contraseña"):
+            if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == "Si" and st.button("Cambiar Contraseña"):
                 cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
     else:
         st.write("")
