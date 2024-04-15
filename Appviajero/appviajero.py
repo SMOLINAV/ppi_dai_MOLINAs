@@ -91,18 +91,18 @@ if st.session_state.usuario:
     st.header("Calcular Tiempo Promedio de Vuelo")
 
     distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
-else:
-    st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
+
 
 
 # Velocidad promedio de un avión en kilómetros por hora
-velocidad_promedio_kmh = 800
+    velocidad_promedio_kmh = 800
 
 # Botón para calcular el tiempo de vuelo promedio
-if st.button("Calcular Tiempo de Vuelo Promedio"):
-    tiempo_vuelo_promedio = calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh)
-    st.write("El tiempo de vuelo promedio es:", tiempo_vuelo_promedio, "horas")
-
+    if st.button("Calcular Tiempo de Vuelo Promedio"):
+        tiempo_vuelo_promedio = calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh)
+        st.write("El tiempo de vuelo promedio es:", tiempo_vuelo_promedio, "horas")
+else:
+    st.write("Por favor, inicia sesión para acceder a la función para calcular el tiempo de vuelo promedio.")
 
 # Sección "Acerca de mí"
 st.write("<span style='color:green'>Acerca De Mí</span>", unsafe_allow_html=True)
