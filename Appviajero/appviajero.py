@@ -4,7 +4,6 @@ from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contras
 from nueva_pestana import mostrar_pagina_busqueda
 from busqueda_colombia import buscar_lugares_ciudad
 from busquedaciudadpais import buscar_lugares_ciudad_pais
-# import duracionvuelo
 
 
 # Cargar usuarios al iniciar la aplicación
@@ -77,7 +76,7 @@ else:
     st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
 
 # Función para calcular el tiempo de vuelo promedio
-st.header("Calcular Tiempo Promedio de Vuelo")
+st.header("Calcular Tiempo Promedio De Vuelo")
 if st.session_state.usuario:
     def calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh):
     # Convertir la velocidad de km/h a km/min
