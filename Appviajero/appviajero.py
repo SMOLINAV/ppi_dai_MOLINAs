@@ -63,7 +63,10 @@ if ciudad:
 # Seccion buscar lugares paises América
 st.header("Buscar Lugares En América")
 if st.session_state.usuario:
-    paises = ["Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba", "Estados Unidos", "México", "Panamá", "Paraguay", "Perú", "Puerto Rico", "Uruguay", "Venezuela"]
+    paises = [
+        "Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba", "Estados Unidos", "México",
+        "Panamá", "Paraguay", "Perú", "Puerto Rico", "Uruguay", "Venezuela"
+    ]
     pais = st.selectbox("Seleccione un país:", sorted(paises))
     if pais:
         ciudades = buscar_lugares_ciudad_pais(pais)
