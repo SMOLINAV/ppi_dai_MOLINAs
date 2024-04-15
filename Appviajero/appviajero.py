@@ -77,23 +77,24 @@ else:
     st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
 
 # Función para calcular el tiempo de vuelo promedio
-def calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh):
+if st.session_state.usuario:
+    def calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh):
     # Convertir la velocidad de km/h a km/min
-    velocidad_promedio_kmmin = velocidad_promedio_kmh / 60.0
+        velocidad_promedio_kmmin = velocidad_promedio_kmh / 60.0
     # Calcular el tiempo de vuelo promedio en minutos
-    tiempo_vuelo_promedio_min = distancia_km / velocidad_promedio_kmmin
+        tiempo_vuelo_promedio_min = distancia_km / velocidad_promedio_kmmin
     # Convertir el tiempo de vuelo promedio a horas
-    tiempo_vuelo_promedio_horas = tiempo_vuelo_promedio_min / 60.0
-    return tiempo_vuelo_promedio_horas
+        tiempo_vuelo_promedio_horas = tiempo_vuelo_promedio_min / 60.0
+        return tiempo_vuelo_promedio_horas
 
 # Sección para ingresar la distancia
-st.header("Calcular Tiempo Promedio de Vuelo")
-if st.session_state.usuario:
+    st.header("Calcular Tiempo Promedio de Vuelo")
+
     distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
 else:
     st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
 
-    
+
 # Velocidad promedio de un avión en kilómetros por hora
 velocidad_promedio_kmh = 800
 
