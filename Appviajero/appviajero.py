@@ -77,6 +77,7 @@ else:
     st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
 
 # Función para calcular el tiempo de vuelo promedio
+st.header("Calcular Tiempo Promedio de Vuelo")
 if st.session_state.usuario:
     def calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh):
     # Convertir la velocidad de km/h a km/min
@@ -88,8 +89,6 @@ if st.session_state.usuario:
         return tiempo_vuelo_promedio_horas
 
 # Sección para ingresar la distancia
-    st.header("Calcular Tiempo Promedio de Vuelo")
-
     distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
 
 
