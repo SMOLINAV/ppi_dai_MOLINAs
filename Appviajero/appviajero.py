@@ -123,14 +123,27 @@ Gracias por confiar en nosotros para planificar tus aventuras.
          ¡Esperamos que disfrutes explorando el mundo con nuestra aplicación!
          ''')
 
-def calcular_duracion_vuelo():
-    # Entrada de distancia en kilómetros
-    distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
+# Función para calcular el tiempo de vuelo promedio
+def calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh):
+    # Convertir la velocidad de km/h a km/min
+    velocidad_promedio_kmmin = velocidad_promedio_kmh / 60.0
+    # Calcular el tiempo de vuelo promedio en minutos
+    tiempo_vuelo_promedio_min = distancia_km / velocidad_promedio_kmmin
+    # Convertir el tiempo de vuelo promedio a horas
+    tiempo_vuelo_promedio_horas = tiempo_vuelo_promedio_min / 60.0
+    return tiempo_vuelo_promedio_horas
 
-    # Velocidad promedio de un avión en kilómetros por hora
-    velocidad_promedio_kmh = 800
+# Título de la aplicación
+st.title("APP VIAJEROFELIZ")
 
-    # Botón para calcular la duración del vuelo
-    if st.button("Calcular Duración del Vuelo"):
-        duracion_vuelo = distancia_km / velocidad_promedio_kmh
-        st.write("Duración del vuelo:", duracion_vuelo, "horas")
+# Sección para ingresar la distancia
+st.header("Calcular Tiempo Promedio de Vuelo")
+distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
+
+# Velocidad promedio de un avión en kilómetros por hora
+velocidad_promedio_kmh = 800
+
+# Botón para calcular el tiempo de vuelo promedio
+if st.button("Calcular Tiempo de Vuelo Promedio"):
+    tiempo_vuelo_promedio = calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh)
+    st.write("El tiempo de vuelo promedio es:", tiempo_vuelo_promedio, "horas")
