@@ -44,6 +44,10 @@ else:
     # Detener la ejecución hasta que se acepten los términos
     st.stop()
 
+# Manejo de la sesión
+manage_session()
+
+
 
 # Sección de autenticación en el panel lateral
 st.sidebar.header("Autenticación")
@@ -84,10 +88,6 @@ if st.session_state.usuario:
 
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
-
-# Manejo de la sesión
-manage_session()
-
 
 
 # Seccion buscar lugares Colombia
