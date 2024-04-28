@@ -1,5 +1,5 @@
 import streamlit as st # type: ignore
-
+import auth
 from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contraseña
 from busqueda_colombia import buscar_lugares_ciudad
 from busquedaciudadpais import buscar_lugares_ciudad_pais
