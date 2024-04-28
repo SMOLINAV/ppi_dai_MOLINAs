@@ -70,43 +70,24 @@ elif opcion_autenticacion == "Registrarse":
         # Lógica para registrar nuevo usuario
         st.sidebar.write(f"Registrando nuevo usuario: {nuevo_usuario}...")
 
+# Sección de cambio de contraseña en el panel lateral
+if st.session_state.usuario:
+    st.sidebar.header("Cambio de Contraseña")
+    if st.sidebar.button("Cambiar Contraseña"):
+        st.sidebar.write("<span style='color:orange'>Cambiar Contraseña</span>", unsafe_allow_html=True)
+        if st.session_state.usuario:
+            contraseña_actual = st.sidebar.text_input("Contraseña Actual", type="password")
+            nueva_contraseña = st.sidebar.text_input("Nueva Contraseña", type="password")
+
+            if st.sidebar.selectbox("¿Desea cambiar la contraseña?", ("No", "Sí")) == "Sí" and st.sidebar.button("Cambiar Contraseña"):
+                cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
+
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
 
 # Manejo de la sesión
 manage_session()
 
-# Sección de "Iniciar Sesión" o "Registrarse"
-st.header("Autenticación")
-opcion_autenticacion = st.radio("Selecciona una opción:", ("Iniciar Sesión", 
-                                                           "Registrarse"))
-
-if opcion_autenticacion == "Iniciar Sesión":
-    usuario = iniciar_sesion(usuarios)
-    if usuario:
-        st.session_state.usuario = usuario  # Guardar el usuario en la sesión
-
-elif opcion_autenticacion == "Registrarse":
-    crear_usuario(usuarios)
-
-# Sección de cambio de contraseña
-if st.session_state.usuario:
-    if st.button("Cambiar Contraseña"):
-        st.write("<span style='color:orange'>Cambiar Contraseña</span>", 
-                 unsafe_allow_html=True)
-        if st.session_state.usuario:
-            contraseña_actual = st.text_input("Contraseña Actual", 
-                                              type="password")
-            nueva_contraseña = st.text_input("Nueva Contraseña", 
-                                             type="password")
-            
-            if st.selectbox("¿Desea cambiar la contraseña?", ("No", "Si")) == "Si" and st.button("Cambiar Contraseña"):
-                cambiar_contraseña(st.session_state.usuario, nueva_contraseña)
-    else:
-        st.write("")
-
-else:
-    st.write("")        
 
 
 # Seccion buscar lugares Colombia
