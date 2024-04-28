@@ -72,7 +72,7 @@ if ciudad:
 
 # Seccion buscar lugares paises América
 st.header("Buscar Lugares En América")
-if st.session_state.usuario:
+if "usuario" in st.session_state:
     paises = [
         "Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba",
         "Estados Unidos", "México",
@@ -93,7 +93,7 @@ else:
 
 # Sección "Calcular Tiempo Promedio De Vuelo"
 st.header("Calcular Tiempo Promedio De Vuelo")
-if st.session_state.usuario:
+if "usuario" in st.session_state:
     # Función para calcular el tiempo de vuelo promedio
     def calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh):
         # Convertir la velocidad de km/h a km/min
