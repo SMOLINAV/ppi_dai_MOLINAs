@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st # type: ignore
 
 from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contraseña
 from busqueda_colombia import buscar_lugares_ciudad
@@ -69,7 +69,7 @@ elif opcion_autenticacion == "Registrarse":
     if registrar_button:
         # Lógica para registrar nuevo usuario
         st.sidebar.write(f"Registrando nuevo usuario: {nuevo_usuario}...")
-        
+
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
 
