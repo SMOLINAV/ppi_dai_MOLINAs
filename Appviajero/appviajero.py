@@ -154,32 +154,3 @@ st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante
              consolidándome y laborando en todo lo relacionado a tecnología y 
              en el gran mundo del internet.''')
 st.write("Puedes contactarme smolinav@unal.edu.co")
-
-# Sección "Tratamiento de Datos"
-st.write("<span style='color:blue'> Tratamiento De Datos", unsafe_allow_html=True)
-st.write('''Tratamiento de Datos en nuestra Nueva Aplicación de Viajes
-
-En nuestra emocionante nueva aplicación de viajes, nos esforzamos por brindar una experiencia 
-         personalizada y sobresaliente para cada uno de nuestros valiosos usuarios. 
-         Para lograr esto, recopilamos datos de inicio de sesión con el único propósito 
-         de mejorar nuestras recomendaciones de destinos de viaje y proporcionar 
-         respuestas más precisas a tus consultas.
-
-Es importante destacar que los datos que recopilamos nunca abandonarán nuestra aplicación. 
-         No los vendemos ni compartimos con terceros para ningún propósito, 
-         incluidos fines publicitarios. 
-         Tu privacidad y seguridad son nuestras principales prioridades.
-
-Entendemos que el tiempo es valioso, por lo que hemos establecido un período de retención
-          de datos de un año como máximo. Si durante este tiempo no actualizas tu perfil o 
-         utilizas la aplicación, tus datos se eliminarán automáticamente para garantizar 
-         que solo conservemos la información relevante y actualizada.
-
-Nos comprometemos a ser transparentes en nuestras prácticas de privacidad y seguridad. 
-         Si tienes alguna pregunta o inquietud sobre cómo manejamos tus datos, 
-         no dudes en ponerte en contacto con nuestro equipo de soporte, 
-         siempre estaremos encantados de ayudarte.
-
-Gracias por confiar en nosotros para planificar tus aventuras. 
-         ¡Esperamos que disfrutes explorando el mundo con nuestra aplicación!
-         ''')
