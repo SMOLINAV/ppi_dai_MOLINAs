@@ -18,6 +18,9 @@ def manage_session():
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
 
+opcion = st.sidebar.selectbox("Menú:", ["Inicio", "Registrarse", "Actualizar contraseña", "Buscar Lugares", "Información y contacto"])
+
+
 # Manejo de la sesión
 manage_session()
 
