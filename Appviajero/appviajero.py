@@ -21,6 +21,13 @@ st.sidebar.title("Tratamiento de Datos")
 st.sidebar.write("En nuestra aplicación de viajes, recopilamos datos de inicio de sesión "
                  "con el propósito de mejorar nuestras recomendaciones de destinos de viaje "
                  "y proporcionar respuestas más precisas a tus consultas.")
+# Enlace a los términos y condiciones
+terms_link = "https://www.freeprivacypolicy.com/live/8924ce9c-3360-4c2d-88f6-9ca4587e1e13"
+terms_text = "Consultar los términos y condiciones"
+
+# Renderizar el enlace como un texto HTML
+terms_html = f'<a href="{terms_link}" target="_blank">{terms_text}</a>'
+st.sidebar.markdown(terms_html, unsafe_allow_html=True)
 
 # Casilla de verificación para aceptar los términos
 acepto_terminos = st.sidebar.checkbox("Acepto los términos y condiciones")
