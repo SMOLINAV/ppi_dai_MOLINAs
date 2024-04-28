@@ -1,5 +1,8 @@
 import streamlit as st # type: ignore
 import auth
+import calculoprecio
+
+
 from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contraseña
 from busqueda_colombia import buscar_lugares_ciudad
 from busquedaciudadpais import buscar_lugares_ciudad_pais
@@ -117,6 +120,8 @@ if "usuario" in st.session_state:
 else:
     st.write("Por favor, inicia sesión para acceder a la función para calcular el tiempo de vuelo promedio.")
 
+# Sección para calcular el precio de vuelos
+calculoprecio.mostrar_calculo_precio()
 
 # Sección "Acerca de mí"
 st.write("<span style='color:green'>Acerca De Mí</span>", unsafe_allow_html=True)
