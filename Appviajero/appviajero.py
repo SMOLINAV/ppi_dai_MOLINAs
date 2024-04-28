@@ -41,7 +41,7 @@ else:
 st.sidebar.header("Autenticación")
 
 # Opciones de autenticación
-opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Registrarse"])
+opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Registrarse", "Cambiar Contraseña"])
 
 # Procesar la opción seleccionada
 if opcion_autenticacion == "Inicio":
@@ -50,12 +50,11 @@ if opcion_autenticacion == "Inicio":
         st.session_state.usuario = usuario  # Guardar el usuario en la sesión
 
 elif opcion_autenticacion == "Registrarse":
-    auth.crear_usuario()
+    auth.crear_usuario(usuarios)
 
-# Sección de cambio de contraseña en el panel lateral
-if "usuario" in st.session_state:
-    auth.cambiar_contraseña(st.session_state.usuario)
-
+elif opcion_autenticacion == "Cambiar Contraseña":
+    if "usuario" in st.session_state:
+        auth.cambiar_contraseña(st.session_state.usuario)
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
 
