@@ -8,6 +8,7 @@ from busquedaciudadpais import buscar_lugares_ciudad_pais
 # Cargar usuarios al iniciar la aplicación
 usuarios = cargar_usuarios()
 
+
 # Mantener seccion
 def manage_session():
     if 'usuario' not in st.session_state:
@@ -56,12 +57,22 @@ opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio"
 
 # Procesar la opción seleccionada
 if opcion_autenticacion == "Inicio":
-    usuario = iniciar_sesion()
-    if usuario:
-        st.session_state.usuario = usuario  # Guardar el usuario en la sesión
+    usuario = st.sidebar.text_input("Usuario")
+    contraseña = st.sidebar.text_input("Contraseña", type="password")
+    iniciar_sesion_button = st.sidebar.button("Iniciar Sesión")
+
+    if iniciar_sesion_button:
+        # Lógica para iniciar sesión
+        st.sidebar.write(f"Iniciando sesión como {usuario}...")
 
 elif opcion_autenticacion == "Registrarse":
-    crear_usuario()
+    nuevo_usuario = st.sidebar.text_input("Nuevo Usuario")
+    nueva_contraseña = st.sidebar.text_input("Nueva Contraseña", type="password")
+    registrar_button = st.sidebar.button("Registrarse")
+
+    if registrar_button:
+        # Lógica para registrar nuevo usuario
+        st.sidebar.write(f"Registrando nuevo usuario: {nuevo_usuario}...")
 
 # Sección de cambio de contraseña en el panel lateral
 if st.session_state.usuario:
