@@ -52,16 +52,14 @@ manage_session()
 # Sección de autenticación en el panel lateral
 st.sidebar.header("Autenticación")
 
-# Opciones de autenticación
-opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Registrarse"])
-
-# Procesar la opción seleccionada
 if opcion_autenticacion == "Inicio":
     st.write("### Iniciar Sesión")
     usuario = auth.iniciar_sesion(usuarios)  # Pasar usuarios como argumento
     if usuario:
         st.session_state.usuario = usuario
         st.success(f"Bienvenido, {usuario}! Has iniciado sesión exitosamente.")
+    else:
+        st.session_state.usuario = None  # Reiniciar la sesión si el inicio de sesión falla
 
 elif opcion_autenticacion == "Registrarse":
     st.write("### Registrarse")
@@ -70,10 +68,15 @@ elif opcion_autenticacion == "Registrarse":
 # Sección de cambio de contraseña en el panel lateral
 if st.session_state.usuario:
     st.sidebar.header("Cambio de Contraseña")
-    auth.cambiar_contraseña(st.session_state.usuario, usuarios)  # Pasar usuario y usuarios como argumentos
+    if st.sidebar.button("Cambiar Contraseña"):
+        st.write("### Cambiar Contraseña")
+        contraseña_actual = st.text_input("Contraseña Actual", type="password")
+        nueva_contraseña = st.text_input("Nueva Contraseña", type="password")
 
-# Mostrar estado actual de la sesión
-st.write(f"Estado de la sesión: {st.session_state.usuario}")
+        if st.sidebar.button("Guardar Cambios"):
+            auth.cambiar_contraseña(st.session_state.usuario, nueva_contraseña, usuarios)  # Pasar usuario y usuarios como argumentos
+
+
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
 
