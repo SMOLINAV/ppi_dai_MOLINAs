@@ -45,6 +45,31 @@ else:
     st.stop()
 
 
+# Sección de autenticación en el panel lateral
+st.sidebar.header("Autenticación")
+
+# Opciones de autenticación
+opcion_autenticacion = st.sidebar.radio("Selecciona una opción:", ("Iniciar Sesión", "Registrarse"))
+
+# Procesar la opción seleccionada
+if opcion_autenticacion == "Iniciar Sesión":
+    usuario = st.sidebar.text_input("Usuario")
+    contraseña = st.sidebar.text_input("Contraseña", type="password")
+    iniciar_sesion_button = st.sidebar.button("Iniciar Sesión")
+
+    if iniciar_sesion_button:
+        # Lógica para iniciar sesión
+        st.sidebar.write(f"Iniciando sesión como {usuario}...")
+
+elif opcion_autenticacion == "Registrarse":
+    nuevo_usuario = st.sidebar.text_input("Nuevo Usuario")
+    nueva_contraseña = st.sidebar.text_input("Nueva Contraseña", type="password")
+    registrar_button = st.sidebar.button("Registrarse")
+
+    if registrar_button:
+        # Lógica para registrar nuevo usuario
+        st.sidebar.write(f"Registrando nuevo usuario: {nuevo_usuario}...")
+        
 
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
