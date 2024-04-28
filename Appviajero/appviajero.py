@@ -1,7 +1,7 @@
 import streamlit as st # type: ignore
 import auth
 import calculoprecio
-
+import webbrowser
 
 from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contraseña
 from busqueda_colombia import buscar_lugares_ciudad
@@ -121,7 +121,9 @@ else:
     st.write("Por favor, inicia sesión para acceder a la función para calcular el tiempo de vuelo promedio.")
 
 # Sección para calcular el precio de vuelos
-calculoprecio.mostrar_calculo_precio()
+if st.button("Ver Precio de Vuelos en Avión"):
+    webbrowser.open("https://www.google.com/travel/flights?hl=es")
+
 
 # Sección "Acerca de mí"
 st.write("<span style='color:green'>Acerca De Mí</span>", unsafe_allow_html=True)
