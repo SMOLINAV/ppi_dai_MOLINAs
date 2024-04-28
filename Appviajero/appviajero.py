@@ -6,13 +6,7 @@ from busquedaciudadpais import buscar_lugares_ciudad_pais
 
 
 # Cargar usuarios al iniciar la aplicación
-usuarios = cargar_usuarios()
-
-
-# Mantener seccion
-def manage_session():
-    if 'usuario' not in st.session_state:
-        st.session_state.usuario = None
+usuarios = auth.cargar_usuarios()
 
 # Panel flotante para el tratamiento de datos
 st.sidebar.title("Tratamiento de Datos")
@@ -32,6 +26,7 @@ privacy_html = f'<a href="{privacy_link}" target="_blank">{privacy_text}</a>'
 # Mostrar los enlaces en el panel lateral
 st.sidebar.markdown(terms_html, unsafe_allow_html=True)
 st.sidebar.markdown(privacy_html, unsafe_allow_html=True)
+
 # Casilla de verificación para aceptar los términos
 acepto_terminos = st.sidebar.checkbox("Acepto los términos y condiciones")
 
@@ -40,42 +35,26 @@ if acepto_terminos:
     st.sidebar.success("¡Gracias por aceptar los términos y condiciones!")
 else:
     st.sidebar.warning("Debes aceptar los términos y condiciones para acceder a la web.")
-
-    # Detener la ejecución hasta que se acepten los términos
     st.stop()
-
-# Manejo de la sesión
-manage_session()
-
-
 
 # Sección de autenticación en el panel lateral
 st.sidebar.header("Autenticación")
 
+# Opciones de autenticación
+opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Registrarse"])
+
+# Procesar la opción seleccionada
 if opcion_autenticacion == "Inicio":
-    st.write("### Iniciar Sesión")
-    usuario = auth.iniciar_sesion(usuarios)  # Pasar usuarios como argumento
+    usuario = auth.iniciar_sesion()
     if usuario:
-        st.session_state.usuario = usuario
-        st.success(f"Bienvenido, {usuario}! Has iniciado sesión exitosamente.")
-    else:
-        st.session_state.usuario = None  # Reiniciar la sesión si el inicio de sesión falla
+        st.session_state.usuario = usuario  # Guardar el usuario en la sesión
 
 elif opcion_autenticacion == "Registrarse":
-    st.write("### Registrarse")
-    auth.crear_usuario(usuarios)  # Pasar usuarios como argumento
+    auth.crear_usuario()
 
 # Sección de cambio de contraseña en el panel lateral
-if st.session_state.usuario:
-    st.sidebar.header("Cambio de Contraseña")
-    if st.sidebar.button("Cambiar Contraseña"):
-        st.write("### Cambiar Contraseña")
-        contraseña_actual = st.text_input("Contraseña Actual", type="password")
-        nueva_contraseña = st.text_input("Nueva Contraseña", type="password")
-
-        if st.sidebar.button("Guardar Cambios"):
-            auth.cambiar_contraseña(st.session_state.usuario, nueva_contraseña, usuarios)  # Pasar usuario y usuarios como argumentos
-
+if "usuario" in st.session_state:
+    auth.cambiar_contraseña(st.session_state.usuario)
 
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
