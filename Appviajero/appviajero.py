@@ -57,22 +57,18 @@ opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio"
 
 # Procesar la opción seleccionada
 if opcion_autenticacion == "Inicio":
-    usuario = st.sidebar.text_input("Usuario")
-    contraseña = st.sidebar.text_input("Contraseña", type="password")
-    iniciar_sesion_button = st.sidebar.button("Iniciar Sesión")
-
-    if iniciar_sesion_button:
-        # Lógica para iniciar sesión
-        st.sidebar.write(f"Iniciando sesión como {usuario}...")
+    st.write("### Iniciar Sesión")
+    usuario = auth.iniciar_sesion()
+    if usuario:
+        st.session_state.usuario = usuario
+        st.success(f"Bienvenido, {usuario}! Has iniciado sesión exitosamente.")
 
 elif opcion_autenticacion == "Registrarse":
-    nuevo_usuario = st.sidebar.text_input("Nuevo Usuario")
-    nueva_contraseña = st.sidebar.text_input("Nueva Contraseña", type="password")
-    registrar_button = st.sidebar.button("Registrarse")
+    st.write("### Registrarse")
+    auth.crear_usuario()
 
-    if registrar_button:
-        # Lógica para registrar nuevo usuario
-        st.sidebar.write(f"Registrando nuevo usuario: {nuevo_usuario}...")
+# Mostrar estado actual de la sesión
+st.write(f"Estado de la sesión: {st.session_state.usuario}")
 
 # Sección de cambio de contraseña en el panel lateral
 if st.session_state.usuario:
