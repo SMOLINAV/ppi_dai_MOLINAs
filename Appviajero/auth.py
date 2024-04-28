@@ -2,6 +2,15 @@ import streamlit as st # type: ignore
 import json
 
 def cargar_usuarios():
+    '''
+    esta función carga los usuarios existentes en el archivo 'usuarios.json'
+    y los devuelve como un diccionario.
+    si el archivo no existe, devuelve un diccionario vacío.
+    args:
+        None
+    returns:
+        dict: diccionario de usuarios
+    '''
     try:
         with open("usuarios.json", "r") as f:
             return json.load(f)
@@ -9,10 +18,24 @@ def cargar_usuarios():
         return {}
 
 def guardar_usuarios(usuarios):
+    '''
+    esta función escribe los usuarios en el archivo 'usuarios.json'
+    args:
+        dict: diccionario de usuarios
+    returns:
+        None
+    '''
     with open("usuarios.json", "w") as f:
         json.dump(usuarios, f)
 
 def crear_usuario():
+    '''
+    esta función crea un nuevo usuario en el archivo 'usuarios.json'
+    args:
+        None
+    returns:
+        None
+    '''
     st.header("Crear Nuevo Usuario")
     nuevo_usuario = st.text_input("Nombre de usuario")
     nueva_contraseña = st.text_input("Contraseña", type="password")
@@ -27,6 +50,13 @@ def crear_usuario():
             st.success("Usuario creado exitosamente. ¡Ahora puedes iniciar sesión!")
 
 def iniciar_sesion():
+    '''
+    esta función inicia la sesión de un usuario existente
+    args:
+        None
+    returns:
+        str: nombre de usuario
+    '''
     usuarios = cargar_usuarios()
     st.header("Iniciar Sesión")
     usuario = st.text_input("Nombre de usuario")
@@ -42,6 +72,13 @@ def iniciar_sesion():
             return usuario
 
 def cambiar_contraseña(usuario):
+    '''
+    esta función cambia la contraseña de un usuario existente
+    args:
+        str: nombre de usuario
+    returns:
+        None
+    '''
     usuarios = cargar_usuarios()
     if usuario in usuarios:
         st.header("Cambio de Contraseña")
