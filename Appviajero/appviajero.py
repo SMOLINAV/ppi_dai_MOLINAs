@@ -14,6 +14,27 @@ def manage_session():
     if 'usuario' not in st.session_state:
         st.session_state.usuario = None
 
+# Panel flotante para el tratamiento de datos
+st.sidebar.title("Tratamiento de Datos")
+
+# Mensaje sobre el tratamiento de datos
+st.sidebar.write("En nuestra aplicación de viajes, recopilamos datos de inicio de sesión "
+                 "con el propósito de mejorar nuestras recomendaciones de destinos de viaje "
+                 "y proporcionar respuestas más precisas a tus consultas.")
+
+# Casilla de verificación para aceptar los términos
+acepto_terminos = st.sidebar.checkbox("Acepto los términos y condiciones")
+
+# Verificación de aceptación
+if acepto_terminos:
+    st.sidebar.success("¡Gracias por aceptar los términos y condiciones!")
+else:
+    st.sidebar.warning("Debes aceptar los términos y condiciones para acceder a la web.")
+
+    # Detener la ejecución hasta que se acepten los términos
+    st.stop()
+
+
 
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
