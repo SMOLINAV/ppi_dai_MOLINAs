@@ -122,7 +122,7 @@ else:
 
 # Sección para calcular el precio de vuelos
 if st.button("Ver Precio de Vuelos en Avión"):
-    webbrowser.open("https://www.google.com/travel/flights?hl=es")
+    st.markdown("https://www.google.com/travel/flights?hl=es")
 
 
 # Sección "Acerca de mí"
