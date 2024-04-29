@@ -39,7 +39,7 @@ if acepto_terminos:
     st.sidebar.success("¡Gracias por aceptar los términos y condiciones!"
                        "¡Gracias por aceptar la política de privacidad!")
 else:
-    st.sidebar.warning("Debes aceptar los términos y condiciones para acceder a la web."
+    st.sidebar.warning("Debes aceptar los términos y condiciones para acceder a la web.", 
                        "Debes aceptar la política de privacidad para acceder a la web.")
     st.stop()
 
