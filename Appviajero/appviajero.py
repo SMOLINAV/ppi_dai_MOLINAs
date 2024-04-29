@@ -11,7 +11,7 @@ from busquedaciudadpais import buscar_lugares_ciudad_pais
 usuarios = auth.cargar_usuarios()
 
 # Panel flotante para el tratamiento de datos
-st.sidebar.title("Tratamiento de Datos")
+st.sidebar.title("Tratamiento de Datos y política de privacidad")
 # Enlaces a términos y condiciones y política de privacidad
 terms_link = "https://www.freeprivacypolicy.com/live/8924ce9c-3360-4c2d-88f6-9ca4587e1e13"
 privacy_link = "https://www.freeprivacypolicy.com/live/4faa307d-9cd8-427b-a9f5-84381e67f8d2"
@@ -29,19 +29,20 @@ acepto_terminos1 = st.sidebar.checkbox("Acepto los términos y condiciones")
 acepto_terminos2 = st.sidebar.checkbox("Acepto la política de privacidad")
 # Verificación de aceptación
 if acepto_terminos1:
-    st.sidebar.success("¡Gracias por aceptar los términos y condiciones!"
-                       "para acceder a la web tambien tienes que aceptar la política de privacidad")
+    st.sidebar.success("¡Gracias por aceptar los términos y condiciones!")
+else:   
+    st.sidebar.warning("Debes aceptar la políticas de privacidad para acceder a la web.")
+    st.stop()
 if acepto_terminos2:
     st.sidebar.success("¡Gracias por aceptar la políticas de privacidad!")
-
 else:
     st.sidebar.warning("Debes aceptar los términos y condiciones para acceder a la web."
                        "Debes aceptar la política de privacidad para acceder a la web.")
     st.stop()
+
+
 # Sección de autenticación en el panel lateral
 st.sidebar.header("Autenticación")
-
-
 # Opciones de autenticación
 opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Registrarse", "Cambiar Contraseña"])
 # Procesar la opción seleccionada
