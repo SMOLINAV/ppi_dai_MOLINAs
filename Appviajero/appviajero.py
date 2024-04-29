@@ -121,8 +121,12 @@ else:
     st.write("Por favor, inicia sesión para acceder a la función para calcular el tiempo de vuelo promedio.")
 
 # Sección para calcular el precio de vuelos
-if st.button("Ver Precio de Vuelos en Avión"):
-    st.markdown("https://www.google.com/travel/flights?hl=es")
+st.header("Calcular Precio De Vuelos")
+if "usuario" in st.session_state:
+    if st.button("Ver Precio de Vuelos en Avión"):
+        st.markdown("https://www.google.com/travel/flights?hl=es")
+else:
+    st.write("Por favor, inicia sesión para acceder a la función para calcular el precio de vuelos.")
 
 
 # Sección "Acerca de mí"
