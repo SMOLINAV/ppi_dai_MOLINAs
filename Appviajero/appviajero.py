@@ -31,7 +31,7 @@ acepto_terminos2 = st.sidebar.checkbox("Acepto la política de privacidad")
 if acepto_terminos1:
     st.sidebar.success("¡Gracias por aceptar los términos y condiciones!")
 else:   
-    st.sidebar.warning("Debes aceptar la políticas de privacidad para acceder a la web.")
+    st.sidebar.warning("Debes aceptar los términos y condiciones para acceder a la web.")
     st.stop()
 if acepto_terminos2:
     st.sidebar.success("¡Gracias por aceptar la políticas de privacidad!")
