@@ -25,12 +25,12 @@ privacy_html = f'<a href="{privacy_link}" target="_blank">{privacy_text}</a>'
 st.sidebar.markdown(terms_html, unsafe_allow_html=True)
 st.sidebar.markdown(privacy_html, unsafe_allow_html=True)
 # Casilla de verificación para aceptar los términos
-acepto_terminos = st.sidebar.checkbox("Acepto los términos y condiciones")
-acepto_terminos = st.sidebar.checkbox("Acepto la política de privacidad")
+acepto_terminos1 = st.sidebar.checkbox("Acepto los términos y condiciones")
+acepto_terminos2 = st.sidebar.checkbox("Acepto la política de privacidad")
 # Verificación de aceptación
-if acepto_terminos:
+if acepto_terminos1:
     st.sidebar.success("¡Gracias por aceptar los términos y condiciones!"
-                       "¡Gracias por aceptar la política de privacidad!")
+                       "para acceder a la web tambien tienes que aceptar la política de privacidad")
 else:
     st.sidebar.warning("Debes aceptar los términos y condiciones para acceder a la web."
                        "Debes aceptar la política de privacidad para acceder a la web.")
