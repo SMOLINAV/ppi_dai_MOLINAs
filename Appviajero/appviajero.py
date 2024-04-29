@@ -8,7 +8,7 @@ from busquedaciudadpais import buscar_lugares_ciudad_pais
 
 
 # Cargar usuarios al iniciar la aplicación
-usuarios = auth.cargar_usuarios()
+usuarios = cargar_usuarios()
 
 # Panel flotante para el tratamiento de datos
 st.sidebar.title("Tratamiento de Datos y política de privacidad")
@@ -46,7 +46,7 @@ st.sidebar.header("Autenticación")
 opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Registrarse", "Cambiar Contraseña"])
 # Procesar la opción seleccionada
 if opcion_autenticacion == "Inicio":
-    usuario = auth.iniciar_sesion()
+    usuario = iniciar_sesion()
     if usuario:
         st.session_state.usuario = usuario  # Guardar el usuario en la sesión
 
@@ -55,7 +55,7 @@ elif opcion_autenticacion == "Registrarse":
 
 elif opcion_autenticacion == "Cambiar Contraseña":
     if "usuario" in st.session_state:
-        auth.cambiar_contraseña(st.session_state.usuario)
+        cambiar_contraseña(st.session_state.usuario)
 
 
 # Título de la aplicación
@@ -124,7 +124,7 @@ else:
 st.header("Calcular Precio De Vuelos")
 if "usuario" in st.session_state:
     if st.button("Ver Precio de Vuelos en Avión"):
-        st.write("Encontrarás el link para ir a una pagina de buscador, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
+        st.write("Encontrarás el link para ir a una pagina de google, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
         st.markdown("https://www.google.com/travel/flights?hl=es")
 else:
     st.write("Por favor, inicia sesión para acceder a la función para calcular el precio de vuelos.")
