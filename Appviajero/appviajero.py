@@ -1,7 +1,6 @@
 import streamlit as st # type: ignore
 import auth
-import calculoprecio
-import webbrowser
+
 
 from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contraseña
 from busqueda_colombia import buscar_lugares_ciudad
@@ -61,6 +60,8 @@ elif opcion_autenticacion == "Registrarse":
 elif opcion_autenticacion == "Cambiar Contraseña":
     if "usuario" in st.session_state:
         auth.cambiar_contraseña(st.session_state.usuario)
+
+
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
 
