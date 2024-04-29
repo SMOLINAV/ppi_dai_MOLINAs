@@ -124,6 +124,7 @@ else:
 st.header("Calcular Precio De Vuelos")
 if "usuario" in st.session_state:
     if st.button("Ver Precio de Vuelos en Avión"):
+        st.write("Encontrarás el link para ir a una pagina de buscador, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
         st.markdown("https://www.google.com/travel/flights?hl=es")
 else:
     st.write("Por favor, inicia sesión para acceder a la función para calcular el precio de vuelos.")
