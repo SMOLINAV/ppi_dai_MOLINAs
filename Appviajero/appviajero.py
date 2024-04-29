@@ -12,27 +12,21 @@ usuarios = auth.cargar_usuarios()
 
 # Panel flotante para el tratamiento de datos
 st.sidebar.title("Tratamiento de Datos")
-
 # Enlaces a términos y condiciones y política de privacidad
 terms_link = "https://www.freeprivacypolicy.com/live/8924ce9c-3360-4c2d-88f6-9ca4587e1e13"
 privacy_link = "https://www.freeprivacypolicy.com/live/4faa307d-9cd8-427b-a9f5-84381e67f8d2"
-
 # Texto de los enlaces
 terms_text = "Consultar los términos y condiciones"
 privacy_text = "Consultar la política de privacidad"
-
 # Renderizar los enlaces como texto HTML
 terms_html = f'<a href="{terms_link}" target="_blank">{terms_text}</a>'
 privacy_html = f'<a href="{privacy_link}" target="_blank">{privacy_text}</a>'
-
 # Mostrar los enlaces en el panel lateral
 st.sidebar.markdown(terms_html, unsafe_allow_html=True)
 st.sidebar.markdown(privacy_html, unsafe_allow_html=True)
-
 # Casilla de verificación para aceptar los términos
 acepto_terminos = st.sidebar.checkbox("Acepto los términos y condiciones")
 acepto_terminos = st.sidebar.checkbox("Acepto la política de privacidad")
-
 # Verificación de aceptación
 if acepto_terminos:
     st.sidebar.success("¡Gracias por aceptar los términos y condiciones!"
@@ -41,13 +35,12 @@ else:
     st.sidebar.warning("Debes aceptar los términos y condiciones para acceder a la web."
                        "Debes aceptar la política de privacidad para acceder a la web.")
     st.stop()
-
 # Sección de autenticación en el panel lateral
 st.sidebar.header("Autenticación")
 
+
 # Opciones de autenticación
 opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Registrarse", "Cambiar Contraseña"])
-
 # Procesar la opción seleccionada
 if opcion_autenticacion == "Inicio":
     usuario = auth.iniciar_sesion()
