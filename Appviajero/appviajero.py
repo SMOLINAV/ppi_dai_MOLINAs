@@ -51,7 +51,7 @@ if opcion_autenticacion == "Inicio":
         st.session_state.usuario = usuario  # Guardar el usuario en la sesión
 
 elif opcion_autenticacion == "Registrarse":
-    crear_usuario(usuarios)
+    crear_usuario()
 
 elif opcion_autenticacion == "Cambiar Contraseña":
     if "usuario" in st.session_state:
