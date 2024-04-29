@@ -32,12 +32,15 @@ st.sidebar.markdown(privacy_html, unsafe_allow_html=True)
 
 # Casilla de verificación para aceptar los términos
 acepto_terminos = st.sidebar.checkbox("Acepto los términos y condiciones")
+acepto_terminos = st.sidebar.checkbox("Acepto la política de privacidad")
 
 # Verificación de aceptación
 if acepto_terminos:
-    st.sidebar.success("¡Gracias por aceptar los términos y condiciones!")
+    st.sidebar.success("¡Gracias por aceptar los términos y condiciones!"
+                       "¡Gracias por aceptar la política de privacidad!")
 else:
-    st.sidebar.warning("Debes aceptar los términos y condiciones para acceder a la web.")
+    st.sidebar.warning("Debes aceptar los términos y condiciones para acceder a la web."
+                       "Debes aceptar la política de privacidad para acceder a la web.")
     st.stop()
 
 # Sección de autenticación en el panel lateral
