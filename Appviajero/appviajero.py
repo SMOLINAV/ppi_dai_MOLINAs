@@ -57,23 +57,23 @@ if st.session_state.aceptado:
 
         # Seccion buscar lugares paises América
         st.header("Buscar Lugares En América")
-        if "usuario" in st.session_state:
-            paises = [
-                "Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba",
-                "Estados Unidos", "México",
-                "Panamá", "Paraguay", "Perú", "Puerto Rico", "Uruguay", "Venezuela"
-            ]
-            pais = st.selectbox("Seleccione un país:", sorted(paises))
-            if pais:
-                ciudades = buscar_lugares_ciudad_pais(pais)
-                st.write(f"Ciudades importantes de {pais.capitalize()}:")
-                for ciudad, lugares in ciudades.items():
-                    st.write(f"{ciudad}:")
-                    for lugar in lugares:
-                        st.write(f"- {lugar}")
 
-        else:
-            st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
+        paises = [
+            "Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba",
+            "Estados Unidos", "México",
+            "Panamá", "Paraguay", "Perú", "Puerto Rico", "Uruguay", "Venezuela"
+        ]
+        pais = st.selectbox("Seleccione un país:", sorted(paises))
+        if pais:
+            ciudades = buscar_lugares_ciudad_pais(pais)
+            st.write(f"Ciudades importantes de {pais.capitalize()}:")
+            for ciudad, lugares in ciudades.items():
+                st.write(f"{ciudad}:")
+                for lugar in lugares:
+                    st.write(f"- {lugar}")
+
+    else:
+        st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
 
 
         # Sección para ver el precio de vuelos
