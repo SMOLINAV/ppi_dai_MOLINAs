@@ -34,11 +34,13 @@ if st.session_state.visible and not st.session_state.aceptado:
 
 
 if st.session_state.aceptado:
-
+    
     # Sección de autenticación en el panel lateral
     st.sidebar.header("Autenticación")
+
     # Opciones de autenticación
     opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "iniciar sesión", "Registrarse", "Cambiar Contraseña"])
+
     # Procesar la opción seleccionada
     if opcion_autenticacion == "Inicio":
         # Título de la aplicación
@@ -57,7 +59,6 @@ if st.session_state.aceptado:
 
         # Seccion buscar lugares paises América
         st.header("Buscar Lugares En América")
-
         paises = [
             "Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba",
             "Estados Unidos", "México",
@@ -74,13 +75,10 @@ if st.session_state.aceptado:
 
         # Sección para ver el precio de vuelos
         st.header("Ver Precio De Vuelos")
-        if "usuario" in st.session_state:
-            if st.button("Ver Precio de Vuelos en Avión"):
-                st.write("Encontrarás el link para ir a una pagina de google, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
-                st.markdown("https://www.google.com/travel/flights?hl=es")
-        else:
-            st.write("Por favor, inicia sesión para acceder a la función para calcular el precio de vuelos.")
 
+        if st.button("Ver Precio de Vuelos en Avión"):
+            st.write("Encontrarás el link para ir a una pagina de google, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
+            st.markdown("https://www.google.com/travel/flights?hl=es")
 
         # Sección "Acerca de mí"
         st.write("<span style='color:green'>Acerca De Mí</span>", unsafe_allow_html=True)
