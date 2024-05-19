@@ -100,10 +100,9 @@ if st.session_state.aceptado:
     elif opcion_autenticacion == "iniciar sesión":
         auth.login_user()
     elif opcion_autenticacion == "Registrarse":
-        crear_usuario()
+        auth.register_user()
 
     elif opcion_autenticacion == "Cambiar Contraseña":
-        if "usuario" in st.session_state:
-            cambiar_contraseña(st.session_state.usuario)
+        auth.change_password()
 
 
