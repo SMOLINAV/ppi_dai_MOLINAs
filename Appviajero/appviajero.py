@@ -40,7 +40,7 @@ if st.session_state.aceptado:
     # Sección de autenticación en el panel lateral
     st.sidebar.header("Autenticación")
     # Opciones de autenticación
-    opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Registrarse", "Cambiar Contraseña"])
+    opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "iniciar sesión", "Registrarse", "Cambiar Contraseña"])
     # Procesar la opción seleccionada
     if opcion_autenticacion == "Inicio":
         usuario = iniciar_sesion()
@@ -89,33 +89,6 @@ if st.session_state.aceptado:
     else:
         st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
 
-
-    # Sección "Calcular Tiempo Promedio De Vuelo"
-    st.header("Calcular Tiempo Promedio De Vuelo")
-    if "usuario" in st.session_state:
-        # Función para calcular el tiempo de vuelo promedio
-        def calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh):
-            # Convertir la velocidad de km/h a km/min
-            velocidad_promedio_kmmin = velocidad_promedio_kmh / 60.0
-            # Calcular el tiempo de vuelo promedio en minutos
-            tiempo_vuelo_promedio_min = distancia_km / velocidad_promedio_kmmin
-            # Convertir el tiempo de vuelo promedio a horas
-            tiempo_vuelo_promedio_horas = tiempo_vuelo_promedio_min / 60.0
-            return tiempo_vuelo_promedio_horas
-
-        # Sección para ingresar la distancia
-        distancia_km = st.number_input("Ingrese la distancia entre los dos puntos en kilómetros:", min_value=0.0, step=1.0)
-
-        # Velocidad promedio de un avión en kilómetros por hora
-        velocidad_promedio_kmh = 800
-
-        # Botón para calcular el tiempo de vuelo promedio
-        if st.button("Calcular Tiempo de Vuelo Promedio"):
-            tiempo_vuelo_promedio = calcular_tiempo_vuelo_promedio(distancia_km, velocidad_promedio_kmh)
-            st.write("El tiempo de vuelo promedio es:", tiempo_vuelo_promedio, "horas")
-
-    else:
-        st.write("Por favor, inicia sesión para acceder a la función para calcular el tiempo de vuelo promedio.")
 
     # Sección para calcular el precio de vuelos
     st.header("Calcular Precio De Vuelos")
