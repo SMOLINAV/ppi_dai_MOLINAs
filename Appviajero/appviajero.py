@@ -90,8 +90,8 @@ if st.session_state.aceptado:
         st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
 
 
-    # Sección para calcular el precio de vuelos
-    st.header("Calcular Precio De Vuelos")
+    # Sección para ver el precio de vuelos
+    st.header("Ver Precio De Vuelos")
     if "usuario" in st.session_state:
         if st.button("Ver Precio de Vuelos en Avión"):
             st.write("Encontrarás el link para ir a una pagina de google, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
