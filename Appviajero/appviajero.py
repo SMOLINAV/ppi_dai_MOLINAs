@@ -72,10 +72,6 @@ if st.session_state.aceptado:
                 for lugar in lugares:
                     st.write(f"- {lugar}")
 
-    else:
-        st.write("Por favor, inicia sesión para acceder a la función de busqueda en paises de América.")
-
-
         # Sección para ver el precio de vuelos
         st.header("Ver Precio De Vuelos")
         if "usuario" in st.session_state:
