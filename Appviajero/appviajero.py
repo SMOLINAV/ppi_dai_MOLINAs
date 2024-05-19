@@ -2,13 +2,11 @@ import streamlit as st # type: ignore
 import auth
 import terminoscondiciones
 
-from auth import cargar_usuarios, crear_usuario, iniciar_sesion, cambiar_contraseña
 from busqueda_colombia import buscar_lugares_ciudad
 from busquedaciudadpais import buscar_lugares_ciudad_pais
 
-
-# Cargar usuarios al iniciar la aplicación
-usuarios = cargar_usuarios()
+# Título de la aplicación
+st.title("APP VIAJEROFELIZ")
 
 # Inicializar el estado si no existe
 if 'visible' not in st.session_state:
