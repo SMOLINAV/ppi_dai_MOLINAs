@@ -85,17 +85,7 @@ if st.session_state.aceptado:
             st.write("Encontrarás el link para ir a una página de Google, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
             st.markdown("https://www.google.com/travel/flights?hl=es")
 
-    elif opcion_autenticacion == "Iniciar sesión":
-        if auth.login_user():
-            st.session_state.logged_in = True
-            st.experimental_rerun()
-    elif opcion_autenticacion == "Registrarse":
-        auth.register_user()
-    elif opcion_autenticacion == "Cambiar Contraseña":
-        auth.change_password()
-
-
-        # Mostrar secciones solo si el usuario ha iniciado sesión
+            # Mostrar secciones solo si el usuario ha iniciado sesión
         if st.session_state.logged_in:
             # Sección de código ISO
             st.header("Código ISO")
@@ -117,3 +107,15 @@ if st.session_state.aceptado:
 
         else:
             st.write("Por favor, inicia sesión para acceder a más funcionalidades.")
+
+
+    elif opcion_autenticacion == "Iniciar sesión":
+        if auth.login_user():
+            st.session_state.logged_in = True
+            st.experimental_rerun()
+    elif opcion_autenticacion == "Registrarse":
+        auth.register_user()
+    elif opcion_autenticacion == "Cambiar Contraseña":
+        auth.change_password()
+
+
