@@ -14,7 +14,11 @@ def extraer_codigo_iso(pais):
     url = "https://es.wikipedia.org/wiki/ISO_3166-1"
 
     # Leer las tablas de la página
-    tablas = pd.read_html(url)
+    try:
+        tablas = pd.read_html(url)
+    except ImportError as e:
+        st.error("Necesitas instalar la biblioteca lxml. Usa `pip install lxml`.")
+        return None
 
     # Intentar encontrar la tabla correcta
     iso_table = None
