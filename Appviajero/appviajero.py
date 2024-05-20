@@ -100,7 +100,9 @@ if st.session_state.aceptado:
     elif opcion_autenticacion == "iniciar sesión":
 
         # Si inicio sesion
-        if auth.login_user():
+        if not auth.login_user():
+            st.write("Por favor, inicia sesión para acceder a más funcionalidades.")
+        else:
             
             # Sección de codigo ISO
             st.header("Código ISO")
@@ -121,8 +123,6 @@ if st.session_state.aceptado:
             if st.button("Ver Mapa de Aeropuertos"):
                 resultado = aeropuertos.graficar_mapa(busque)
                 st.plotly_chart(resultado)
-        else:
-            st.write("Por favor, inicia sesión para acceder a más funcionalidades.")
 
     elif opcion_autenticacion == "Registrarse":
         auth.register_user()
