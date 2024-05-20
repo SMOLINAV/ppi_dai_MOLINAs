@@ -2,6 +2,7 @@ import streamlit as st # type: ignore
 import auth
 import terminoscondiciones
 import aeropuertos
+import codigoiso
 
 from busqueda_colombia import buscar_lugares_ciudad
 from busquedaciudadpais import buscar_lugares_ciudad_pais
@@ -81,10 +82,15 @@ if st.session_state.aceptado:
             st.write("Encontrarás el link para ir a una pagina de google, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
             st.markdown("https://www.google.com/travel/flights?hl=es")
 
+        # Sección de codigo ISO
+        st.header("Código ISO")
+        nombrecomun = st.text_input("Ingrese el nombre del país:")
+        if st.button("Ver Código ISO"):
+            codigoiso.extraer_codigo_iso(nombrecomun)
 
         # Sección de Aeropuertos
         st.header("Aeropuertos")
-        pais = st.text_input("Ingrese el iso del pais:")
+        pais = st.text_input("Ingrese el ISO del pais:")
         busque = aeropuertos.buscar_aeropuertos_por_pais(aeropuertos.datos, pais)
         if st.button("Ver Mapa de Aeropuertos"):
             resultado = aeropuertos.graficar_mapa(busque)
