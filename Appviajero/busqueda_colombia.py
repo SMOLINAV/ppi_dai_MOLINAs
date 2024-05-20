@@ -1,92 +1,109 @@
 # busqueda_colombia.py
 
-def buscar_lugares_ciudad(ciudad):
+def buscar_lugares_departamento(departamento):
     """
-    Esta función busca y devuelve una lista de lugares bonitos e importantes de la ciudad especificada en Colombia.
+    Esta función busca y devuelve una lista de lugares bonitos e importantes de la departamento especificada en Colombia.
     
     Args:
-        ciudad (str): El nombre de la ciudad colombiana.
+        departamento (str): El nombre de la departamento colombiana.
     
     Returns:
-        list: Una lista de lugares bonitos e importantes de la ciudad.
+        list: Una lista de lugares bonitos e importantes del departamento.
     """
-    # Aquí puedes implementar la lógica para buscar los lugares de la ciudad en Colombia
-    # Por ahora, simplemente devolvemos una lista de lugares de ejemplo
-    if ciudad.lower() == "bogotá":
-        return ["Monserrate", "Plaza de Bolívar", "Museo del Oro", "La Candelaria"]
-    elif ciudad.lower() == "medellín":
-        return ["Parque Arví", "Plaza Botero", "Parque Explora", "Comuna 13"]
-    elif ciudad.lower() == "cartagena":
-        return ["Ciudad Amurallada", "Castillo de San Felipe", "Playa Blanca", "Islas del Rosario"]
-    elif ciudad.lower() == "cali":
-        return ["Cristo Rey", "Zoológico de Cali", "Cerro de las Tres Cruces", "Iglesia La Ermita"]
-    elif ciudad.lower() == "santa marta":
-        return ["Parque Nacional Natural Tayrona", "Playa El Rodadero", "Quinta de San Pedro Alejandrino", "Sierra Nevada de Santa Marta"]
-    elif ciudad.lower() == "pereira":
-        return ["Parque Consotá", "Bioparque Ukumarí", "Catedral de Nuestra Señora de la Pobreza", "Laguna del Otún"]
-    elif ciudad.lower() == "bucaramanga":
-        return ["Parque Nacional del Chicamocha", "Parque del Agua", "Catedral de la Sagrada Familia", "Cascada de Juan Curi"]
-    elif ciudad.lower() == "barranquilla":
-        return ["Malecón Puerta de Oro", "Museo del Caribe", "Castillo de Salgar", "Plaza de San Nicolás"]
-    elif ciudad.lower() == "cúcuta":
-        return ["Parque Nacional Natural Los Estoraques", "Museo del Agua", "Catedral de San José", "Mirador Cristo Rey"]
-    elif ciudad.lower() == "manizales":
-        return ["Nevado del Ruiz", "Catedral Basílica Metropolitana de Manizales", "Cable Aéreo de Manizales", "Parque Natural Regional Río Blanco"]
-    elif ciudad.lower() == "pasto":
-        return ["Volcán Galeras", "Plaza de Nariño", "Laguna de la Cocha", "Iglesia de San Felipe"]
-    elif ciudad.lower() == "valledupar":
-        return ["Parque de la Leyenda Vallenata", "Museo del Acordeón", "Cerro de la Popa", "Catedral de Santa Bárbara de Valledupar"]
-    elif ciudad.lower() == "ibagué":
-        return ["Nevado del Tolima", "Jardín Botánico San Jorge", "Catedral Primada de Ibagué", "Lago del Totumo"]
-    elif ciudad.lower() == "villavicencio":
-        return ["Parque Los Ocarros", "Bioparque Makuira", "Catedral Nuestra Señora del Carmen", "Mirador El Calvario"]
-    elif ciudad.lower() == "montería":
-        return ["Parque Nacional Natural Paramillo", "Catedral San Jerónimo de Montería", "Parque Ronda del Sinú", "Plaza Cultural de la Castellana"]
-    elif ciudad.lower() == "sogamoso":
-        return ["Laguna de Tota", "Catedral Basílica del Milagroso Señor de los Milagros", "Monumento a la Virgen del Milagro", "Parque Arqueológico de Monquirá"]
-    elif ciudad.lower() == "arauca":
-        return ["Parque Nacional Natural El Tuparro", "Puente José Antonio Páez", "Catedral de San Bartolomé", "Plaza Bolívar de Arauca"]
-    elif ciudad.lower() == "quibdó":
-        return ["Reserva Natural Serranía del Baudó", "Catedral de San Francisco de Asís", "Malecón de Quibdó", "Plaza Cívica José María Cordoba"]
-    elif ciudad.lower() == "riohacha":
-        return ["Desierto de la Guajira", "Catedral Nuestra Señora de los Remedios", "Parque de la Marina", "Plaza José Prudencio Padilla"]
-    elif ciudad.lower() == "quindío":
-        return ["Parque Nacional Natural Los Nevados", "Parque del Café", "Jardín Botánico del Quindío", "Viaducto César Gaviria Trujillo"]
-    elif ciudad.lower() == "yopal":
-        return ["Reserva Natural Laguna de la Leche", "Catedral Santiago de los Caballeros", "Puente Real de Boyacá", "Monumento a la Libertad de Yopal"]
-    elif ciudad.lower() == "leticia":
-        return ["Reserva Natural Marasha", "Parque Nacional Natural Amacayacu", "Catedral Nuestra Señora de la Paz", "Malecón Turístico"]
-    elif ciudad.lower() == "flores":
-        return ["Laguna de Yarinacocha", "Catedral Nuestra Señora de la Asunción", "Mercado de Belén", "Plaza Mayor"]
-    elif ciudad.lower() == "mitú":
-        return ["Reserva Nacional Natural Puinawai", "Catedral de San José", "Parque Japonés", "Plaza de la Paz"]
-    elif ciudad.lower() == "trinidad":
-        return ["Iglesia de la Santísima Trinidad", "Parque Nacional Madidi", "Museo de Historia Natural Noel Kempff Mercado", "Malecón de la Costanera"]
-    elif ciudad.lower() == "sacaba":
-        return ["Iglesia de San Pedro", "Parque Nacional Tunari", "Casa de la Cultura de Sacaba", "Jardín Botánico La Boliviana"]
-    elif ciudad.lower() == "cobija":
-        return ["Catedral de Cobija", "Plaza 10 de Febrero", "Parque Nacional Madidi", "Iglesia de San Pedro"]
-    elif ciudad.lower() == "sucre":
-        return ["Catedral de Nuestra Señora de Guadalupe", "Plaza 25 de Mayo", "Parque Cretácico", "Iglesia de San Lázaro"]
-    elif ciudad.lower() == "oruro":
-        return ["Carnaval de Oruro", "Catedral Basílica Menor de San Felipe", "Museo Nacional Antropológico", "Mirador del Cerro Santa Bárbara"]
-    elif ciudad.lower() == "tarija":
-        return ["Catedral San Bernardo", "Plaza Luis de Fuentes", "Museo Paleontológico y Arqueológico", "Parque Temático Megalítico"]
-    elif ciudad.lower() == "cisneros":
-        return ["Iglesia de Nuestra Señora de las Mercedes", "Cerro El Capiro", "Parque Recreacional Capiro y Campana", "Mirador de la Virgen"]
-    elif ciudad.lower() == "rionegro":
-        return ["Parque Principal Santander", "Iglesia de Nuestra Señora del Rosario", "Cascada La Romera", "Laguna El Tablazo"]
-    elif ciudad.lower() == "guatapé":
-        return ["Peñon de Guatapé", "Represa de Guatapé", "Malecón de Guatapé", "Plazoleta de los zócalos"]
-    elif ciudad.lower() == "marinilla":
-        return ["Parque Principal de Marinilla", "Iglesia de San José", "Mirador de la Cruz", "Cascada La Chorrera"]
-    elif ciudad.lower() == "guarne":
-        return ["Parque Principal de Guarne", "Iglesia de San Juan Bautista", "Cerro Quitasol", "Cascada La Miel"]
-    elif ciudad.lower() == "sopetrán":
-        return ["Parque Principal de Sopetrán", "Iglesia de Nuestra Señora de las Mercedes", "Cascada El Salado", "Mirador de las tres cruces"]
-    elif ciudad.lower() == "santa fe":
-        return ["Cascada La Mina", "Mirador de Santa Fe", "Plaza Principal de Santa Fe", "Iglesia de Santa Bárbara"]
-    elif ciudad.lower() == "armenia":
-        return ["Jardín Botánico del Quindío", "Parque de la Vida", "Café Park", "Iglesia de San Francisco de Asís"]
-    else:
-        return ["Lo sentimos, no encontramos información para esta ciudad."]
+    # Aquí puedes implementar la lógica para buscar los lugares del departamento en Colombia
+    if departamento.lower() == "amazonas":
+        return ["Leticia", "Parque Nacional Natural Amacayacu", "Reserva Natural Tanimboca", "Isla de los Micos", "Puerto Nariño"]
+    elif departamento.lower() == "antioquia":
+        return ["Medellín", "Parque Arví", "Guatapé y el Peñol", "Jardín", "Santa Fe de Antioquia"]
+
+    elif departamento.lower() == "arauca":
+        return ["Saravena", "Caño Cristales", "Parque Nacional Natural El Tuparro", "Puerto Rondón", "Tame"]
+
+    elif departamento.lower() == "atlántico":
+        return ["Barranquilla", "Puerto Colombia", "Parque Isla Salamanca", "Sabanagrande", "Juan de Acosta"]
+
+    elif departamento.lower() == "bogotá d.c.":
+        return ["Bogotá", "La Candelaria", "Monserrate", "Usaquén", "Zona T", "Museo del Oro"]
+
+    elif departamento.lower() == "bolívar":
+        return ["Cartagena de Indias", "Islas del Rosario", "Volcán del Totumo", "Mompox", "Parque Nacional Natural Los Colorados"]
+
+    elif departamento.lower() == "boyacá":
+        return ["Villa de Leyva", "Parque Nacional Natural Iguaque", "Tunja", "Puente de Boyacá", "Ráquira"]
+
+    elif departamento.lower() == "caldas":
+        return ["Manizales", "Parque Nacional Natural Los Nevados", "Salamina", "Termales de Santa Rosa de Cabal", "Hacienda Venecia"]
+
+    elif departamento.lower() == "caquetá":
+        return ["Florencia", "Parque Nacional Natural Serranía de Chiribiquete", "Parque Natural Cascada El Paujil", "Puerto Arango", "Mirador Turístico La Montañita"]
+
+    elif departamento.lower() == "casanare":
+        return ["Yopal", "Reserva Natural Serranía de la Lindosa", "Parque Ecológico Punto de Encuentro", "Aguazul", "El Morichal"]
+
+    elif departamento.lower() == "cauca":
+        return ["Popayán", "Tierradentro", "Puracé", "Santander de Quilichao", "Silvia"]
+
+    elif departamento.lower() == "cesar":
+        return ["Valledupar", "Parque Nacional Natural Sierra Nevada de Santa Marta", "Aguachica", "Bosconia", "Pueblo Bello"]
+
+    elif departamento.lower() == "chocó":
+        return ["Bahía Solano", "Parque Nacional Natural Ensenada de Utría", "Quibdó", "Nuquí", "Capurganá"]
+
+    elif departamento.lower() == "córdoba":
+        return ["Montería", "Cereté", "Lorica", "San Antero", "Golfo de Morrosquillo"]
+
+    elif departamento.lower() == "cundinamarca":
+        return ["Zipaquirá", "La Mesa", "Suesca", "Villeta", "Parque Nacional Natural Chingaza"]
+
+    elif departamento.lower() == "guainía":
+        return ["Inírida", "Cerro Pintado", "Raudal del Jirijirimo", "Caño Hondo", "Cerro Azul"]
+
+    elif departamento.lower() == "guaviare":
+        return ["San José del Guaviare", "Serranía de La Lindosa", "Laguna del Caimán", "Parque Nacional Natural Serranía de Chiribiquete", "El Retorno"]
+
+    elif departamento.lower() == "huila":
+        return ["Neiva", "Desierto de la Tatacoa", "San Agustín", "Parque Nacional Natural Cueva de los Guácharos", "Villavieja"]
+
+    elif departamento.lower() == "la guajira":
+        return ["Riohacha", "Cabo de la Vela", "Punta Gallinas", "Parque Nacional Natural Macuira", "Uribia"]
+
+    elif departamento.lower() == "magdalena":
+        return ["Santa Marta", "Parque Nacional Natural Tayrona", "Minca", "Ciénaga", "Fundación"]
+
+    elif departamento.lower() == "meta":
+        return ["Villavicencio", "Caño Cristales", "San Martín", "Puerto López", "La Macarena"]
+
+    elif departamento.lower() == "nariño":
+        return ["Pasto", "Laguna de la Cocha", "San Juan de Pasto", "Tumaco", "Volcán Galeras"]
+
+    elif departamento.lower() == "norte de santander":
+        return ["Cúcuta", "Pamplona", "Parque Nacional Natural Santurbán", "Ocaña", "Villa del Rosario"]
+
+    elif departamento.lower() == "putumayo":
+        return ["Mocoa", "Parque Nacional Natural Serranía de la Macarena", "Puerto Asís", "San Francisco", "Valle del Guamuez"]
+
+    elif departamento.lower() == "quindío":
+        return ["Armenia", "Salento", "Parque Nacional Natural Los Nevados", "Parque del Café", "Buenavista"]
+
+    elif departamento.lower() == "risaralda":
+        return ["Pereira", "Santa Rosa de Cabal", "Dosquebradas", "Marsella"]
+
+    elif departamento.lower() == "san andrés y providencia":
+        return ["San Andrés", "Providencia", "Cayo Cangrejo", "Johnny Cay", "Parque Nacional Natural Old Providence McBean Lagoon"]
+
+    elif departamento.lower() == "santander":
+        return ["Bucaramanga", "Barrancabermeja", "San Gil", "Socorro", "Parque Nacional del Chicamocha"]
+
+    elif departamento.lower() == "sucre":
+        return ["Sincelejo", "Tolú", "Coveñas", "San Onofre", "Morrosquillo Gulf"]
+
+    elif departamento.lower() == "tolima":
+        return ["Ibagué", "Saldaña", "Espinal", "Mariquita"]
+
+    elif departamento.lower() == "valle del cauca":
+        return ["Cali", "Buenaventura", "San Cipriano", "Buga", "Lago Calima"]
+
+    elif departamento.lower() == "vaupés":
+        return ["Mitú", "Cerro Azul", "Parque Nacional Natural Yapacaní", "Parque Nacional Natural Nukak"]
+    elif departamento.lower() == "vichada":
+     return ["Puerto Carreño", "Raudal del Guayabero", "Cerro Venado", "Parque Nacional Natural El Tuparro", "Caño Cristales del Vichada"]

@@ -51,10 +51,10 @@ if st.session_state.aceptado:
 
         # Seccion buscar lugares Colombia
         st.header("Buscar Lugares En Colombia")
-        ciudad = st.text_input("Ingrese el nombre de una ciudad colombiana:")
-        if ciudad:
-            lugares = buscar_lugares_ciudad(ciudad)
-            st.write(f"Lugares bonitos e importantes de {ciudad.capitalize()}:")
+        departamento = st.text_input("Ingrese el nombre de un departamento en colombiana:")
+        if departamento:
+            lugares = buscar_lugares_ciudad(departamento)
+            st.write(f"Lugares bonitos e importantes del {departamento}:")
             for lugar in lugares:
                 st.write(f"- {lugar}")
 
