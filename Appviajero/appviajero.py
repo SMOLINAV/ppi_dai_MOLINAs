@@ -57,6 +57,8 @@ if st.session_state.aceptado:
             st.write(f"Lugares bonitos e importantes del {departamento}:")
             for lugar in lugares:
                 st.write(f"- {lugar}")
+        else:
+            st.write("No se encontro ningun departamento en Colombia.")
 
 
         # Seccion buscar lugares paises América

@@ -107,3 +107,6 @@ def buscar_lugares_departamento(departamento):
         return ["Mitú", "Cerro Azul", "Parque Nacional Natural Yapacaní", "Parque Nacional Natural Nukak"]
     elif departamento.lower() == "vichada":
      return ["Puerto Carreño", "Raudal del Guayabero", "Cerro Venado", "Parque Nacional Natural El Tuparro", "Caño Cristales del Vichada"]
+    
+    else:
+        return []
