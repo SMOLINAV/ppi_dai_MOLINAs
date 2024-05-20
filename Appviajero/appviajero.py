@@ -10,9 +10,6 @@ from busquedaciudadpais import buscar_lugares_ciudad_pais
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
 
-# Seccion de estado de inicio sesion
-iniciosesion = False
-
 # Inicializar el estado si no existe
 if 'visible' not in st.session_state:
     st.session_state.visible = False
