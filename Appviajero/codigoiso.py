@@ -36,7 +36,7 @@ def extraer_codigo_iso(pais):
     return None
 
 # Pedir al usuario que ingrese el nombre del país
-nombre_pais = input("Ingresa el nombre del país para obtener su código ISO: ")
+nombre_pais = st.text_input("Ingresa el nombre del país para obtener su código ISO: ")
 
 # Obtener el código ISO del país ingresado por el usuario
 codigo_iso = extraer_codigo_iso(nombre_pais)
