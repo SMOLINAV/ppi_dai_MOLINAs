@@ -45,7 +45,3 @@ def graficar_mapa(df):
 def buscar_aeropuertos_por_pais(df, codigo_pais):
     resultados = df[df['iso_country'] == codigo_pais]
     return resultados
-
-X = input("Ingresar el codigo del país: ")
-pais = buscar_aeropuertos_por_pais(datos, X)
-graficar_mapa(pais)
