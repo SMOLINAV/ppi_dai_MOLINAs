@@ -90,7 +90,7 @@ if st.session_state.aceptado:
             # Sección de código ISO
             st.header("Código ISO")
             nombrecomun = st.text_input("Ingrese el nombre del país:")
-            if st.button("Ver Código ISO"):
+            if st.text_input("Ver Código ISO"):
                 codigonombre = codigoiso.extraer_codigo_iso(nombrecomun)
                 if codigonombre:
                     st.write(f"El código ISO alfa-2 de {nombrecomun} es: {codigonombre}")
