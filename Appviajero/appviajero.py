@@ -44,7 +44,7 @@ if st.session_state.aceptado:
     st.sidebar.header("Autenticación")
 
     # Opciones de autenticación
-    opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "iniciar sesión", "Registrarse", "Cambiar Contraseña"])
+    opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "iniciar sesión", "Registrarse", "Cambiar Contraseña", "Funcion aeropuertos"])
 
     # Procesar la opción seleccionada
     if opcion_autenticacion == "Inicio":
@@ -133,5 +133,14 @@ if st.session_state.aceptado:
 
     elif opcion_autenticacion == "Cambiar Contraseña":
         auth.change_password()
+    
+    elif opcion_autenticacion == "Funcion aeropuertos":
+        aeropuertos.aeropuertos()
+        st.header("Aeropuertos")
+        pais = st.text_input("Ingrese el ISO del pais:")
+        busque = aeropuertos.buscar_aeropuertos_por_pais(aeropuertos.datos, pais)
+        if st.button("Ver Mapa de Aeropuertos"):
+            resultado = aeropuertos.graficar_mapa(busque)
+            st.plotly_chart(resultado)
 
 
