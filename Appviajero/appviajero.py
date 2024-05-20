@@ -4,7 +4,7 @@ import terminoscondiciones
 import aeropuertos
 import codigoiso
 
-from busqueda_colombia import buscar_lugares_ciudad
+from busqueda_colombia import buscar_lugares_departamento
 from busquedaciudadpais import buscar_lugares_ciudad_pais
 
 # Título de la aplicación
@@ -53,7 +53,7 @@ if st.session_state.aceptado:
         st.header("Buscar Lugares En Colombia")
         departamento = st.text_input("Ingrese el nombre de un departamento en colombiana:")
         if departamento:
-            lugares = buscar_lugares_ciudad(departamento)
+            lugares = buscar_lugares_departamento(departamento)
             st.write(f"Lugares bonitos e importantes del {departamento}:")
             for lugar in lugares:
                 st.write(f"- {lugar}")
