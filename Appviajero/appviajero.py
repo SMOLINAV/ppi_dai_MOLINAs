@@ -95,25 +95,25 @@ if st.session_state.aceptado:
         auth.change_password()
 
 
-    # Mostrar secciones solo si el usuario ha iniciado sesión
-    if st.session_state.logged_in:
-        # Sección de código ISO
-        st.header("Código ISO")
-        nombrecomun = st.text_input("Ingrese el nombre del país:")
-        if st.button("Ver Código ISO"):
-            codigonombre = codigoiso.extraer_codigo_iso(nombrecomun)
-            if codigonombre:
-                st.write(f"El código ISO alfa-2 de {nombrecomun} es: {codigonombre}")
-            else:
-                st.write(f"No se encontró el código ISO alfa-2 para {nombrecomun}.")
+        # Mostrar secciones solo si el usuario ha iniciado sesión
+        if st.session_state.logged_in:
+            # Sección de código ISO
+            st.header("Código ISO")
+            nombrecomun = st.text_input("Ingrese el nombre del país:")
+            if st.button("Ver Código ISO"):
+                codigonombre = codigoiso.extraer_codigo_iso(nombrecomun)
+                if codigonombre:
+                    st.write(f"El código ISO alfa-2 de {nombrecomun} es: {codigonombre}")
+                else:
+                    st.write(f"No se encontró el código ISO alfa-2 para {nombrecomun}.")
 
-        # Sección de Aeropuertos
-        st.header("Aeropuertos")
-        pais = st.text_input("Ingrese el ISO del país:")
-        if st.button("Ver Mapa de Aeropuertos"):
-            busque = aeropuertos.buscar_aeropuertos_por_pais(aeropuertos.datos, pais)
-            resultado = aeropuertos.graficar_mapa(busque)
-            st.plotly_chart(resultado)
+            # Sección de Aeropuertos
+            st.header("Aeropuertos")
+            pais = st.text_input("Ingrese el ISO del país:")
+            if st.button("Ver Mapa de Aeropuertos"):
+                busque = aeropuertos.buscar_aeropuertos_por_pais(aeropuertos.datos, pais)
+                resultado = aeropuertos.graficar_mapa(busque)
+                st.plotly_chart(resultado)
 
-    else:
-        st.write("Por favor, inicia sesión para acceder a más funcionalidades.")
+        else:
+            st.write("Por favor, inicia sesión para acceder a más funcionalidades.")
