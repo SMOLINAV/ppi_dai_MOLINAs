@@ -35,14 +35,3 @@ def extraer_codigo_iso(pais):
     # Si no se encontró el país, devolver None
     return None
 
-# Pedir al usuario que ingrese el nombre del país
-nombre_pais = st.text_input("Ingresa el nombre del país para obtener su código ISO: ")
-
-# Obtener el código ISO del país ingresado por el usuario
-codigo_iso = extraer_codigo_iso(nombre_pais)
-
-if codigo_iso:
-    st.write(f"El código ISO 3166-1 alfa-2 de {nombre_pais} es: {codigo_iso}")
-else:
-    st.write(f"No se encontró el código ISO 3166-1 alfa-2 para {nombre_pais}.")
-
