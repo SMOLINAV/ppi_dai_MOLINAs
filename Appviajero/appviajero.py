@@ -98,10 +98,9 @@ if st.session_state.aceptado:
         st.write("Puedes contactarme smolinav@unal.edu.co")
 
     elif opcion_autenticacion == "iniciar sesión":
-        iniciosesion = auth.login_user()
 
         # Si inicio sesion
-        if iniciosesion:
+        if auth.login_user():
             
             # Sección de codigo ISO
             st.header("Código ISO")
