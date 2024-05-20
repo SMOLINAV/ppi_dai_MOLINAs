@@ -1,4 +1,5 @@
-import streamlit as st # type: ignore
+import streamlit as st
+import pandas as pd
 import auth
 import terminoscondiciones
 import aeropuertos
@@ -17,6 +18,9 @@ if 'visible' not in st.session_state:
 if 'aceptado' not in st.session_state:
     st.session_state.aceptado = False
 
+if 'logged_in' not in st.session_state:
+    st.session_state.logged_in = False
+
 # Verificar si el usuario acepta los términos y condiciones
 ver_terminos = st.button("Ver Términos y Condiciones")
 
@@ -34,24 +38,22 @@ if st.session_state.visible and not st.session_state.aceptado:
         st.session_state.visible = False
         st.experimental_rerun()
 
-
 if st.session_state.aceptado:
     
     # Sección de autenticación en el panel lateral
     st.sidebar.header("Autenticación")
 
     # Opciones de autenticación
-    opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "iniciar sesión", "Registrarse", "Cambiar Contraseña"])
+    opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Iniciar sesión", "Registrarse", "Cambiar Contraseña", "Cerrar sesión"])
 
     # Procesar la opción seleccionada
     if opcion_autenticacion == "Inicio":
         # Título de la aplicación
         st.title("APP VIAJEROFELIZ")
 
-
-        # Seccion buscar lugares Colombia
+        # Sección de buscar lugares en Colombia
         st.header("Buscar Lugares En Colombia")
-        departamento = st.text_input("Ingrese el nombre de un departamento en colombiana:")
+        departamento = st.text_input("Ingrese el nombre de un departamento en Colombia:")
         if departamento:
             lugares = buscar_lugares_departamento(departamento)
             if lugares:
@@ -59,10 +61,9 @@ if st.session_state.aceptado:
                 for lugar in lugares:
                     st.write(f"- {lugar}")
             else:
-                st.write("No se encontro ningun departamento en Colombia.")
+                st.write("No se encontró ningún departamento en Colombia.")
 
-
-        # Seccion buscar lugares paises América
+        # Sección de buscar lugares en países de América
         st.header("Buscar Lugares En América")
         paises = [
             "Argentina", "Brasil", "Canadá", "Chile", "Costa Rica", "Cuba",
@@ -80,55 +81,40 @@ if st.session_state.aceptado:
 
         # Sección para ver el precio de vuelos
         st.header("Ver Precio De Vuelos")
-
         if st.button("Ver Precio de Vuelos en Avión"):
-            st.write("Encontrarás el link para ir a una pagina de google, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
+            st.write("Encontrarás el link para ir a una página de Google, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
             st.markdown("https://www.google.com/travel/flights?hl=es")
 
-
-        # Sección "Acerca de mí"
-        st.write("<span style='color:green'>Acerca De Mí</span>", unsafe_allow_html=True)
-        st.write('''Mi nombre es Santiago Molina Velasquez y soy estudiante 
-                    de ingeniería de sistemas en la Universidad Nacional de Colombia. 
-                    Me apasiona el mundo de la tecnología y estoy comprometido a brindar soluciones 
-                    innovadoras a través del desarrollo de software y la ingeniería de sistemas. 
-                    Tengo como metas cercanas terminar mi carrera profesional y seguir 
-                    consolidándome y laborando en todo lo relacionado a tecnología y 
-                    en el gran mundo del internet.''')
-        st.write("Puedes contactarme smolinav@unal.edu.co")
-
-    elif opcion_autenticacion == "iniciar sesión":
-
-        # Si inicio sesion
-        if not auth.login_user():
-            st.write("Por favor, inicia sesión para acceder a más funcionalidades.")
-        else:
-            
-            # Sección de codigo ISO
-            st.header("Código ISO")
-            nombrecomun = st.text_input("Ingrese el nombre del país:")
-            codigonombre = None
-            if st.button("Ver Código ISO"):
-                codigonombre = codigoiso.extraer_codigo_iso(nombrecomun)
-                if codigonombre:
-                    st.write(f"El código ISO alfa-2 de {nombrecomun} es: {codigonombre}")
-                else:
-                    st.write(f"No se encontró el código ISO alfa-2 para {nombrecomun}.")
-
-
-            # Sección de Aeropuertos
-            st.header("Aeropuertos")
-            pais = st.text_input("Ingrese el ISO del pais:")
-            busque = aeropuertos.buscar_aeropuertos_por_pais(aeropuertos.datos, pais)
-            if st.button("Ver Mapa de Aeropuertos"):
-                resultado = aeropuertos.graficar_mapa(busque)
-                st.plotly_chart(resultado)
-
+    elif opcion_autenticacion == "Iniciar sesión":
+        if auth.login_user():
+            st.session_state.logged_in = True
+            st.experimental_rerun()
     elif opcion_autenticacion == "Registrarse":
         auth.register_user()
-
     elif opcion_autenticacion == "Cambiar Contraseña":
         auth.change_password()
+    elif opcion_autenticacion == "Cerrar sesión":
+        st.session_state.logged_in = False
+        st.experimental_rerun()
 
+    # Mostrar secciones solo si el usuario ha iniciado sesión
+    if st.session_state.logged_in:
+        # Sección de código ISO
+        st.header("Código ISO")
+        nombrecomun = st.text_input("Ingrese el nombre del país:")
+        if st.button("Ver Código ISO"):
+            codigonombre = codigoiso.extraer_codigo_iso(nombrecomun)
+            if codigonombre:
+                st.write(f"El código ISO alfa-2 de {nombrecomun} es: {codigonombre}")
+            else:
+                st.write(f"No se encontró el código ISO alfa-2 para {nombrecomun}.")
 
-# Version full funcional
+        # Sección de Aeropuertos
+        st.header("Aeropuertos")
+        pais = st.text_input("Ingrese el ISO del país:")
+        if st.button("Ver Mapa de Aeropuertos"):
+            busque = aeropuertos.buscar_aeropuertos_por_pais(aeropuertos.datos, pais)
+            resultado = aeropuertos.graficar_mapa(busque)
+            st.plotly_chart(resultado)
+    else:
+        st.write("Por favor, inicia sesión para acceder a más funcionalidades.")
