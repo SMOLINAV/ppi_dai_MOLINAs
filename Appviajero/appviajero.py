@@ -113,6 +113,8 @@ if st.session_state.aceptado:
         if auth.login_user():
             st.session_state.logged_in = True
             st.experimental_rerun()
+            st.success("Inicio de sesión exitoso.")
+
     elif opcion_autenticacion == "Registrarse":
         auth.register_user()
     elif opcion_autenticacion == "Cambiar Contraseña":
