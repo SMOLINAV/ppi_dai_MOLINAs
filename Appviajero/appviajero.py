@@ -86,7 +86,12 @@ if st.session_state.aceptado:
         st.header("Código ISO")
         nombrecomun = st.text_input("Ingrese el nombre del país:")
         if st.button("Ver Código ISO"):
-            codigoiso.extraer_codigo_iso(nombrecomun)
+            codigonombre = codigoiso.extraer_codigo_iso(nombrecomun)
+            if codigonombre:
+                st.write(f"El código ISO 3166-1 alfa-2 de {nombrecomun} es: {codigonombre}")
+            else:
+                st.write(f"No se encontró el código ISO 3166-1 alfa-2 para {nombrecomun}.")
+
 
         # Sección de Aeropuertos
         st.header("Aeropuertos")
