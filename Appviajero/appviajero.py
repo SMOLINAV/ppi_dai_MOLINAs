@@ -44,7 +44,7 @@ if st.session_state.aceptado:
     st.sidebar.header("Autenticación")
 
     # Opciones de autenticación
-    opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Iniciar sesión", "Registrarse", "Cambiar Contraseña", "Cerrar sesión"])
+    opcion_autenticacion = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Iniciar sesión", "Registrarse", "Cambiar Contraseña"])
 
     # Procesar la opción seleccionada
     if opcion_autenticacion == "Inicio":
@@ -97,7 +97,7 @@ if st.session_state.aceptado:
 
     # Mostrar secciones solo si el usuario ha iniciado sesión
     if st.session_state.logged_in:
-        # Sección de código ISO
+        """# Sección de código ISO
         st.header("Código ISO")
         nombrecomun = st.text_input("Ingrese el nombre del país:")
         if st.button("Ver Código ISO"):
@@ -114,5 +114,6 @@ if st.session_state.aceptado:
             busque = aeropuertos.buscar_aeropuertos_por_pais(aeropuertos.datos, pais)
             resultado = aeropuertos.graficar_mapa(busque)
             st.plotly_chart(resultado)
+            """
     else:
         st.write("Por favor, inicia sesión para acceder a más funcionalidades.")
