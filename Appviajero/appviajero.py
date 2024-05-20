@@ -1,6 +1,7 @@
 import streamlit as st # type: ignore
 import auth
 import terminoscondiciones
+import aeropuertos
 
 from busqueda_colombia import buscar_lugares_ciudad
 from busquedaciudadpais import buscar_lugares_ciudad_pais
@@ -79,6 +80,15 @@ if st.session_state.aceptado:
         if st.button("Ver Precio de Vuelos en Avión"):
             st.write("Encontrarás el link para ir a una pagina de google, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
             st.markdown("https://www.google.com/travel/flights?hl=es")
+
+
+        # Sección de Aeropuertos
+        st.header("Aeropuertos")
+        pais = st.text_input("Ingrese el iso del pais:")
+        busque = aeropuertos.buscar_aeropuertos_por_pais(aeropuertos.datos, pais)
+        if st.button("Ver Mapa de Aeropuertos"):
+            resultado = aeropuertos.graficar_mapa(busque)
+            st.plotly_chart(resultado)
 
         # Sección "Acerca de mí"
         st.write("<span style='color:green'>Acerca De Mí</span>", unsafe_allow_html=True)
