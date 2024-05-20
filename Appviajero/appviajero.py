@@ -135,3 +135,4 @@ if st.session_state.aceptado:
         auth.change_password()
 
 
+# Version full funcional
