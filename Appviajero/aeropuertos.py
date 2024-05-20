@@ -9,11 +9,6 @@ import geopandas as gpd
 import plotly.express as px
 import plotly.graph_objs as go
 
-# Conocer la versiones de las librerías instaladas
-print("NumPy version:", np.__version__)
-print("Pandas version:", pd.__version__)
-print("GeoPandas version:", gpd.__version__)
-
 # Guardar en la variable 'ruta' la url del dataset
 # Cities
 ruta = 'https://raw.githubusercontent.com/SMOLINAV/ppi_dai_MOLINAs/\
