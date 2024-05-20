@@ -17,11 +17,14 @@ def extraer_codigo_iso(pais):
     tablas = pd.read_html(url)
 
     # Intentar encontrar la tabla correcta
-    for i, tabla in enumerate(tablas):
+    iso_table = None
+    for tabla in tablas:
         if 'Nombre común' in tabla.columns:
             iso_table = tabla
             break
-    else:
+
+    # Si no se encuentra la tabla, devolver None
+    if iso_table is None:
         return None
 
     # Renombramos las columnas basándonos en la estructura esperada
@@ -35,3 +38,12 @@ def extraer_codigo_iso(pais):
     # Si no se encontró el país, devolver None
     return None
 
+# Ejemplo de uso en la aplicación Streamlit
+st.title("Buscar Código ISO de un País")
+nombrecomun = st.text_input("Ingrese el nombre del país:")
+if st.button("Ver Código ISO"):
+    codigonombre = extraer_codigo_iso(nombrecomun)
+    if codigonombre:
+        st.write(f"El código ISO alfa-2 de {nombrecomun} es: {codigonombre}")
+    else:
+        st.write(f"No se encontró el código ISO alfa-2 para {nombrecomun}.")
