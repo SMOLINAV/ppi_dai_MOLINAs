@@ -10,6 +10,9 @@ from busquedaciudadpais import buscar_lugares_ciudad_pais
 # Título de la aplicación
 st.title("APP VIAJEROFELIZ")
 
+# Seccion de estado de inicio sesion
+iniciosesion = False
+
 # Inicializar el estado si no existe
 if 'visible' not in st.session_state:
     st.session_state.visible = False
@@ -85,7 +88,8 @@ if st.session_state.aceptado:
             st.write("Encontrarás el link para ir a una pagina de google, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
             st.markdown("https://www.google.com/travel/flights?hl=es")
 
-        if st.session_state.logged_in:
+        # Si inicio sesion
+        if iniciosesion:
             
             # Sección de codigo ISO
             st.header("Código ISO")
@@ -121,7 +125,8 @@ if st.session_state.aceptado:
         st.write("Puedes contactarme smolinav@unal.edu.co")
 
     elif opcion_autenticacion == "iniciar sesión":
-        auth.login_user()
+        iniciosesion = auth.login_user()
+
     elif opcion_autenticacion == "Registrarse":
         auth.register_user()
 
