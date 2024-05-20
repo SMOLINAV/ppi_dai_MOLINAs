@@ -57,7 +57,7 @@ if st.session_state.aceptado:
         if departamento:
             lugares = buscar_lugares_departamento(departamento)
             if lugares:
-                st.write(f"Lugares bonitos e importantes del {departamento}:")
+                st.write(f"Lugares bonitos e importantes del departamento {departamento}:")
                 for lugar in lugares:
                     st.write(f"- {lugar}")
             else:
@@ -90,7 +90,7 @@ if st.session_state.aceptado:
             # Sección de código ISO
             st.header("Código ISO")
             nombrecomun = st.text_input("Ingrese el nombre del país:")
-            if st.text_input("Ver Código ISO"):
+            if st.button("Ver Código ISO"):
                 codigonombre = codigoiso.extraer_codigo_iso(nombrecomun)
                 if codigonombre:
                     st.write(f"El código ISO alfa-2 de {nombrecomun} es: {codigonombre}")
