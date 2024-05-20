@@ -85,25 +85,29 @@ if st.session_state.aceptado:
             st.write("Encontrarás el link para ir a una pagina de google, para poner tu lugar de destino y saber los vuelos que hay disponibles y sus precios")
             st.markdown("https://www.google.com/travel/flights?hl=es")
 
-        # Sección de codigo ISO
-        st.header("Código ISO")
-        nombrecomun = st.text_input("Ingrese el nombre del país:")
-        codigonombre = None
-        if st.button("Ver Código ISO"):
-            codigonombre = codigoiso.extraer_codigo_iso(nombrecomun)
-            if codigonombre:
-                st.write(f"El código ISO alfa-2 de {nombrecomun} es: {codigonombre}")
-            else:
-                st.write(f"No se encontró el código ISO alfa-2 para {nombrecomun}.")
+        if st.session_state.logged_in:
+            
+            # Sección de codigo ISO
+            st.header("Código ISO")
+            nombrecomun = st.text_input("Ingrese el nombre del país:")
+            codigonombre = None
+            if st.button("Ver Código ISO"):
+                codigonombre = codigoiso.extraer_codigo_iso(nombrecomun)
+                if codigonombre:
+                    st.write(f"El código ISO alfa-2 de {nombrecomun} es: {codigonombre}")
+                else:
+                    st.write(f"No se encontró el código ISO alfa-2 para {nombrecomun}.")
 
 
-        # Sección de Aeropuertos
-        st.header("Aeropuertos")
-        pais = st.text_input("Ingrese el ISO del pais:")
-        busque = aeropuertos.buscar_aeropuertos_por_pais(aeropuertos.datos, pais)
-        if st.button("Ver Mapa de Aeropuertos"):
-            resultado = aeropuertos.graficar_mapa(busque)
-            st.plotly_chart(resultado)
+            # Sección de Aeropuertos
+            st.header("Aeropuertos")
+            pais = st.text_input("Ingrese el ISO del pais:")
+            busque = aeropuertos.buscar_aeropuertos_por_pais(aeropuertos.datos, pais)
+            if st.button("Ver Mapa de Aeropuertos"):
+                resultado = aeropuertos.graficar_mapa(busque)
+                st.plotly_chart(resultado)
+        else:
+            st.write("Por favor, inicia sesión para acceder a más funcionalidades.")
 
         # Sección "Acerca de mí"
         st.write("<span style='color:green'>Acerca De Mí</span>", unsafe_allow_html=True)
