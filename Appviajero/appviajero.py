@@ -106,7 +106,7 @@ if st.session_state.aceptado:
                 st.plotly_chart(resultado)
 
         else:
-            st.write("Por favor, inicia sesión para acceder a más funcionalidades.")
+            st.header("Por favor, inicia sesión para acceder a más funcionalidades.")
         
         # Sección "Acerca de mí"
         st.write("<span style='color:green'>Acerca De Mí</span>", unsafe_allow_html=True)
