@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st # type: ignore
 import pandas as pd
 import auth
 import terminoscondiciones
@@ -93,9 +93,7 @@ if st.session_state.aceptado:
         auth.register_user()
     elif opcion_autenticacion == "Cambiar Contraseña":
         auth.change_password()
-    elif opcion_autenticacion == "Cerrar sesión":
-        st.session_state.logged_in = False
-        st.experimental_rerun()
+
 
     # Mostrar secciones solo si el usuario ha iniciado sesión
     if st.session_state.logged_in:
